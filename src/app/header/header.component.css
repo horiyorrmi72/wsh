@@ -1,0 +1,21 @@
+.nav-container {
+    position: relative;
+}
+
+.nav-item {
+    position: relative;
+    display: block;
+}
+
+.dropdown {
+    display: none;
+    position: relative; 
+    background-color: #fff;
+    padding: 10px;
+    z-index:1;
+}
+
+.nav-item:hover .dropdown,
+.nav-item:focus-within .dropdown {
+    display: block;
+}

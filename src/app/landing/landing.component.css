@@ -1,0 +1,7 @@
+.h-screen {
+    height: 100vh; /* Full viewport height */
+}
+
+.object-cover {
+    object-fit: cover; /* Ensures the image fills the container proportionally */
+}
