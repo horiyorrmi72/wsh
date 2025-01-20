@@ -10,7 +10,7 @@ html {
   scroll-behavior: smooth;
 }
 body{
-    overflow-x: wrap;
+    overflow-x: hidden;
 }
 .opacity-0 {
   opacity: 0;
