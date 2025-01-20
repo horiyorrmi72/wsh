@@ -6,7 +6,6 @@ import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, title: 'Home' },
-  // { path: 'events', 'component': EventsComponent, title: 'Events' },
   { path: 'events', loadChildren: () => import('./events/events.module').then(m => m.EventsModule) },
   { path: 'contact', loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule) },
   { path: 'teams', loadChildren: () => import('./teams/teams.module').then(m => m.TeamsModule) },
