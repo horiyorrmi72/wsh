@@ -16,9 +16,7 @@ const routes: Routes = [
   { path: 'volunteer', loadChildren: () => import('./volunteer/volunteer.module').then(m => m.VolunteerModule) },
   { path: 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule) },
   { path: 'internship', loadChildren: () => import('./internship/internship.module').then(m => m.InternshipModule) },
-  { path: 'support', loadChildren: () => import('./support/support.module').then(m => m.SupportModule) },
-
-  { path: "**", redirectTo: '', pathMatch: 'full' }
+  { path: 'support', loadChildren: () => import('./support/support.module').then(m => m.SupportModule) }
 
 ];
 
