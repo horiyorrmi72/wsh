@@ -1,0 +1,8 @@
+.abuse-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.abuse-card:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.20); 
+  transform: translateY(-0.25rem); 
+}
