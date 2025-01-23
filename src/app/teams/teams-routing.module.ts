@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TeamsComponent } from './teams.component';
 
-const routes: Routes = [{ path: '', component: TeamsComponent }];
+const routes: Routes = [{ path: '', component: TeamsComponent, title:'WSH | Teams' }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
