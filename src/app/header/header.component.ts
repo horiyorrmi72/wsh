@@ -11,6 +11,7 @@ export class HeaderComponent {
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
+    
   }
 
   toggleDropdown(dropdown: string) {

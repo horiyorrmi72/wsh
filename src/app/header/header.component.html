@@ -20,12 +20,12 @@
 
         <!-- Navigation Links -->
         <ul [class.hidden]="!isMenuOpen"
-            class="absolute top-14 left-0 w-full bg-gray-900 text-white md:static md:flex md:items-center md:w-auto md:space-x-6 md:bg-transparent">
+            class="absolute top-14 left-0 w-full bg-gray-900 text-white md:static md:flex md:items-center md:w-auto md:space-x-6 md:bg-transparent ">
 
 
 
             <!-- About Dropdown -->
-            <li class="relative py-2 px-4 md:p-0 hover:bg-gray-900 md:hover:bg-transparent">
+            <li class="relative py-2 px-4 md:p-0 hover:bg-gray-900 md:hover:bg-transparent hover:underline md:hover:translate-x-1">
                 <button class="flex items-center justify-between w-full md:w-auto focus:outline-none"
                     (click)="toggleDropdown('about')">
                     About
@@ -76,14 +76,14 @@
             </li> -->
 
             <!-- programs -->
-            <li class="py-2 px-4 md:p-0 hover:bg-gray-700 md:hover:bg-transparent">
+            <li class="py-2 px-4 md:p-0 hover:bg-gray-700 md:hover:bg-transparent hover:underline md:hover:translate-x-1">
                 <a routerLink="/programs" href="#" class="block">Programs</a>
             </li>
-            <li class="py-2 px-4 md:p-0 hover:bg-gray-700 md:hover:bg-transparent">
+            <li class="py-2 px-4 md:p-0 hover:bg-gray-700 md:hover:bg-transparent hover:underline md:hover:translate-x-1">
                 <a routerLink="/abuse" href="#" class="block capitalize">what is abuse</a>
             </li>
             <!-- How can you helpo section -->
-            <li class="relative  py-2 px-4 md:p-0 hover:bg-transparent md:hover:bg-transparent">
+            <li class="relative  py-2 px-4 md:p-0 hover:bg-transparent md:hover:bg-transparent hover:underline md:hover:translate-x-1">
                 <button class="flex items-center justify-between w-full md:w-auto focus:outline-none"
                     (click)="toggleDropdown('howToHelp')">
                     How can You Help ?
@@ -108,7 +108,7 @@
                 </ul>
             </li>
             <!-- News and Events -->
-            <li class="relative py-2 px-4 md:p-0 hover:bg-transparent md:hover:bg-transparent">
+            <li class="relative py-2 px-4 md:p-0 hover:bg-transparent md:hover:bg-transparent hover:underline md:hover:translate-x-1">
                 <button class="flex items-center justify-between w-full md:w-auto focus:outline-none"
                     (click)="toggleDropdown('news')">
                     News &amp; Events
@@ -134,7 +134,7 @@
             </li>
 
             <!-- Contact -->
-            <li class="py-2 px-4 md:p-0 hover:bg-gray-700 md:hover:bg-transparent">
+            <li class="py-2 px-4 md:p-0 hover:bg-gray-700 md:hover:bg-transparent hover:underline md:hover:translate-x-1">
                 <a routerLink="/contact" href="#" class="block">Contact Us</a>
             </li>
             <!-- Donate -->
