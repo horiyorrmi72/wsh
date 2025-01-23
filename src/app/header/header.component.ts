@@ -11,7 +11,6 @@ export class HeaderComponent {
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
-    
   }
 
   toggleDropdown(dropdown: string) {
@@ -31,7 +30,7 @@ export class HeaderComponent {
     this.isDropdownOpen = {};
   }
 
-  @HostListener('document:click', ['$event'])
+  @HostListener('document:mouseover', ['$event'])
   onDocumentClick(event: Event) {
     const target = event.target as HTMLElement;
 
