@@ -7,44 +7,21 @@
         </div>
     </header>
 
-    <!-- Programs Section -->
+    <!-- Programs Section placeholder-->
     <section class="py-12">
         <div class="container mx-auto px-6">
             <h2 class="text-2xl font-bold text-center mb-8">Explore Our Initiatives</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Program Card -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="../../assets/images/donations.avif" alt="Program Image" class="w-full h-48 object-cover">
+                <div *ngFor="let item of programs" class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="{{item.imagePath}}" alt="{{item.imageAlt}}" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-lg font-semibold mb-2">Program Name</h3>
-                        <p class="text-gray-600 text-sm">A brief description of the program and its impact on the
-                            community.</p>
-                        <a href="/program-details"
+                        <h3 class="text-lg font-semibold mb-2">{{item.programName}}</h3>
+                        <p class="text-gray-600 text-sm">{{item.description}}</p>
+                        <a href="{{item.externalLink}}"
                             class="text-blue-600 mt-4 inline-block font-medium hover:underline">Learn More</a>
                     </div>
                 </div>
-                <!-- Repeat Program Card -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="../../assets/images/donations.avif" alt="Program Image" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold mb-2">Program Name</h3>
-                        <p class="text-gray-600 text-sm">A brief description of the program and its impact on the
-                            community.</p>
-                        <a href="/program-details"
-                            class="text-blue-600 mt-4 inline-block font-medium hover:underline">Learn More</a>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="../../assets/images/donations.avif" alt="Program Image" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold mb-2">Program Name</h3>
-                        <p class="text-gray-600 text-sm">A brief description of the program and its impact on the
-                            community.</p>
-                        <a href="/program-details"
-                            class="text-blue-600 mt-4 inline-block font-medium hover:underline">Learn More</a>
-                    </div>
-                </div>
-                <!-- more program cards as needed -->
             </div>
         </div>
     </section>

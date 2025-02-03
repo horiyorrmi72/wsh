@@ -1,0 +1,11 @@
+img {
+  width: 100%;
+  height: auto; /* Ensures the full image is displayed */
+  object-fit: contain;
+  object-position: top;
+}
+
+.card {
+  height: auto; /* Let it adjust dynamically */
+  min-height: 300px; /* Adjust as needed */
+}

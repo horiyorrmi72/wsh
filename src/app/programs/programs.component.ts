@@ -6,5 +6,56 @@ import { Component } from '@angular/core';
   styleUrls: ['./programs.component.css']
 })
 export class ProgramsComponent {
-
+  programs = [
+    {
+      programName: 'Program Name',
+      imagePath: '../../assets/images/donations.avif',
+      imageAlt: 'image description',
+      description: 'A brief description of the program and its impact on the community.',
+      externalLink: '/program-details',
+      
+    },
+    {
+      programName: 'Program Name',
+      imagePath: '../../assets/images/donations.avif',
+      imageAlt: 'image description',
+      description: 'A brief description of the program and its impact on the community.',
+      externalLink: '/program-details',
+      
+    },
+    {
+      programName: 'Program Name',
+      imagePath: '../../assets/images/donations.avif',
+      imageAlt: 'image description',
+      description: 'A brief description of the program and its impact on the community.',
+      externalLink: '/program-details',
+      
+    },
+    {
+      programName: 'Program Name',
+      imagePath: '../../assets/images/donations.avif',
+      imageAlt: 'image description',
+      description: 'A brief description of the program and its impact on the community.',
+      externalLink: '/program-details',
+      
+    },
+    {
+      programName: 'Program Name',
+      imagePath: '../../assets/images/donations.avif',
+      imageAlt: 'image description',
+      description: 'A brief description of the program and its impact on the community.',
+      externalLink: '/program-details',
+      
+    },
+    {
+      programName: 'Program Name',
+      imagePath: '../../assets/images/donations.avif',
+      imageAlt: 'image description',
+      description: 'A brief description of the program and its impact on the community.',
+      externalLink: '/program-details',
+      
+    },
+    
+  ]
+  
 }

@@ -10,37 +10,12 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Publication 1 -->
-            <div class="bg-white shadow-md rounded-lg p-6">
-                <h3 class="text-xl font-semibold text-gray-800 mb-4">Annual Impact Report 2024</h3>
-                <p class="text-gray-600 mb-4">
-                    A comprehensive overview of our organization's achievements and impact over the past year.
-                </p>
-                <a href="/publications/annual-report-2024.pdf"
-                    class="text-blue-600 font-medium inline-block hover:underline">
-                    Download Report
-                </a>
-            </div>
-            <!-- Publication 2 -->
-            <div class="bg-white shadow-md rounded-lg p-6">
-                <h3 class="text-xl font-semibold text-gray-800 mb-4">Research on Community Empowerment</h3>
-                <p class="text-gray-600 mb-4">
-                    A deep dive into the strategies and methodologies we use to empower communities around the world.
-                </p>
-                <a href="/publications/community-empowerment-research.pdf"
-                    class="text-blue-600 font-medium inline-block hover:underline">
-                    Download Research
-                </a>
-            </div>
-            <!-- Publication 3 -->
-            <div class="bg-white shadow-md rounded-lg p-6">
-                <h3 class="text-xl font-semibold text-gray-800 mb-4">Advocacy for Social Change</h3>
-                <p class="text-gray-600 mb-4">
-                    Insights and recommendations for advocating for systemic social change within communities.
-                </p>
-                <a href="/publications/advocacy-social-change.pdf"
-                    class="text-blue-600 font-medium inline-block hover:underline">
-                    Download Advocacy Guide
+            <!-- Publication -->
+            <div *ngFor="let item of publications" class="bg-white shadow-md rounded-lg p-6">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">{{item.title}}</h3>
+                <p class="text-gray-600 mb-4">{{item.description}}</p>
+                <a href="{{item.url}}" class="text-blue-600 font-medium inline-block hover:underline">
+                    Download <span>{{item.section}}</span>
                 </a>
             </div>
         </div>

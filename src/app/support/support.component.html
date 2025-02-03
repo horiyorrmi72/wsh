@@ -11,43 +11,10 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Support Tip Card -->
-            <div class="bg-white shadow-md rounded-lg p-6">
-                <h3 class="text-xl font-semibold text-gray-800">Listen Without Judgment</h3>
+            <div *ngFor="let item of supports" class="bg-white shadow-md rounded-lg p-6">
+                <h3 class="text-xl font-semibold text-gray-800">{{item.title}}</h3>
                 <p class="text-gray-600 mt-4">
-                    Let the survivor share their story at their own pace. Avoid blaming or questioning their decisions.
-                </p>
-            </div>
-            <div class="bg-white shadow-md rounded-lg p-6">
-                <h3 class="text-xl font-semibold text-gray-800">Believe Them</h3>
-                <p class="text-gray-600 mt-4">
-                    Believe their experience and affirm their courage in sharing it. Validation is a critical step in
-                    their healing.
-                </p>
-            </div>
-            <div class="bg-white shadow-md rounded-lg p-6">
-                <h3 class="text-xl font-semibold text-gray-800">Encourage Professional Help</h3>
-                <p class="text-gray-600 mt-4">
-                    Suggest connecting with counselors, support groups, or organizations that specialize in helping
-                    survivors.
-                </p>
-            </div>
-            <div class="bg-white shadow-md rounded-lg p-6">
-                <h3 class="text-xl font-semibold text-gray-800">Respect Their Privacy</h3>
-                <p class="text-gray-600 mt-4">
-                    Keep their story confidential unless they explicitly ask you to share it for their benefit.
-                </p>
-            </div>
-            <div class="bg-white shadow-md rounded-lg p-6">
-                <h3 class="text-xl font-semibold text-gray-800">Offer Practical Support</h3>
-                <p class="text-gray-600 mt-4">
-                    Help with day-to-day needs like transportation, childcare, or finding a safe space, if they ask for
-                    it.
-                </p>
-            </div>
-            <div class="bg-white shadow-md rounded-lg p-6">
-                <h3 class="text-xl font-semibold text-gray-800">Stay Patient</h3>
-                <p class="text-gray-600 mt-4">
-                    Healing takes time. Be patient and continue to offer support without pressuring them.
+                    {{item.description}}
                 </p>
             </div>
         </div>

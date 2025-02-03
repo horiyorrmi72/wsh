@@ -4,6 +4,7 @@ import { EventsComponent } from './events/events.component';
 import { HomeComponent } from './home/home.component';
 
 
+
 const routes: Routes = [
   { path: '', component: HomeComponent, title: 'Home' },
   { path: 'events', loadChildren: () => import('./events/events.module').then(m => m.EventsModule) },
