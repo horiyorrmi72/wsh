@@ -1,18 +1,37 @@
-<section class="py-12 bg-gray-100">
+<section class="py-12 bg-white">
     <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Meet Our Team</h2>
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-4">Meet Our Team</h2>
         <p class="text-center text-gray-600 mb-12">Our dedicated team is committed to making a difference in the lives
             of those we serve.</p>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Team Member Card -->
-            <div *ngFor="let team of teams" class="bg-white shadow-md rounded-lg overflow-hidden">
-                <div class="h-[300px] w-full">
-                    <img [src]="team.imagePath" alt="Team Member" class="w-full h-full object-cover">
+
+        <!-- Directors Section -->
+        <div class="mb-14">
+            <h3 class="text-gray-800 text-2xl font-bold mb-4 text-center">Directors</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div *ngFor="let team of directors" class="bg-white rounded-lg overflow-hidden">
+                    <div class="h-[350px] w-full overflow-hidden">
+                        <img [src]="team.imagePath" alt="Team Member" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-lg font-semibold text-gray-900">{{ team.name }}</h3>
+                        <p class="text-gray-500 mt-1">{{ team.description }}</p>
+                    </div>
                 </div>
-                <div class="p-6 text-center">
-                    <h3 class="text-lg font-semibold text-gray-800">{{ team.name }}</h3>
-                    <p class="text-sm text-blue-600 font-medium">{{ team.designation }}</p>
-                    <p class="text-gray-600 mt-2">{{ team.description }}</p>
+            </div>
+        </div>
+
+        <!-- Staff Section -->
+        <div class="mb-8">
+            <h3 class="text-gray-800 text-2xl font-bold mb-4 text-center ">Staff</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div *ngFor="let team of staff" class="bg-white rounded-lg overflow-hidden">
+                    <div class="h-[350px] w-full overflow-hidden">
+                        <img [src]="team.imagePath" alt="Team Member" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-lg font-semibold text-gray-900">{{ team.name }}</h3>
+                        <p class="text-gray-500 mt-1">{{ team.description }}</p>
+                    </div>
                 </div>
             </div>
         </div>
