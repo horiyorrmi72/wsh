@@ -11,6 +11,8 @@ import { FooterComponent } from './footer/footer.component';
 import { LandingComponent } from './landing/landing.component';
 import { SliderComponent } from './slider/slider.component';
 import { FadeOnScrollDirective } from 'src/app/directives/fadeOnScroll.directive';
+import { TShirtComponent } from './t-shirt/t-shirt.component';
+import { PreviousEventsComponent } from './previous-events/previous-events.component';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { FadeOnScrollDirective } from 'src/app/directives/fadeOnScroll.directive
     FooterComponent,
     LandingComponent,
     SliderComponent,
-    FadeOnScrollDirective
+    FadeOnScrollDirective,
+    TShirtComponent,
+    PreviousEventsComponent
   ],
   imports: [
     BrowserModule,

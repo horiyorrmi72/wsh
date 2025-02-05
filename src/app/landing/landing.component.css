@@ -5,3 +5,75 @@
 .object-cover {
     object-fit: cover; /* Ensures the image fills the container proportionally */
 }
+
+.home__images{
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .home__orbe{
+    width: 265px;
+    height: 284px;
+    background: linear-gradient(180deg, hsl(0, 0%, 16%) 93%, hsl(0, 0%, 67%) 100%);
+    border-radius: 135px 135px 0 0;
+  }
+  
+  .home__img{
+    position: absolute;
+    width: 250px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 125px 125px 12px 12px;
+    display: inline-flex;
+    align-items: flex-end;
+    bottom: -1.5rem;
+    box-shadow: 0 16px 32px hsla(228, 66%, 25%, .25);
+  }
+
+
+  /*=============== BREAKPOINTS ===============*/
+/* For small devices */
+  
+  
+  
+  @media screen and (min-width: 320px){
+    .home__img{
+      width: 220px;
+      height: 280px;
+    }
+    .home__orbe{
+      width: 240px;
+      height: 264px;
+    }
+  }
+  
+  /* For medium devices */
+  
+  @media screen and (min-width: 767px) {
+    .home__orbe{
+      align-items: flex-end;
+    }
+    .home__img img{
+        max-width: 100%;
+        height: 550px;
+        object-fit: cover;
+    }
+  }
+  
+  /* For large devices */
+  @media screen and (min-width: 1023px) {
+
+   .home__orbe{
+    width: 404px;
+    height: 511px;
+    border-radius: 256px 256px 0 0 ;
+   }
+   .home__img{
+    width: 372px;
+    height: 534px;
+    border-radius: 236px 236px 12px 12px;
+    bottom: -2.5rem;
+   }
+
+  }

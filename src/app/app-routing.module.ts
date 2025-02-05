@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { EventsComponent } from './events/events.component';
 import { HomeComponent } from './home/home.component';
-
-
+import { TShirtComponent } from './t-shirt/t-shirt.component';
+import { PreviousEventsComponent } from './previous-events/previous-events.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, title: 'Home' },
@@ -17,8 +17,9 @@ const routes: Routes = [
   { path: 'volunteer', loadChildren: () => import('./volunteer/volunteer.module').then(m => m.VolunteerModule) },
   { path: 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule) },
   { path: 'internship', loadChildren: () => import('./internship/internship.module').then(m => m.InternshipModule) },
-  { path: 'support', loadChildren: () => import('./support/support.module').then(m => m.SupportModule) }
-
+  { path: 'support', loadChildren: () => import('./support/support.module').then(m => m.SupportModule) },
+  { path: 't-shirt', component: TShirtComponent },
+  { path: 'previous-events', component: PreviousEventsComponent },
 ];
 
 @NgModule({
