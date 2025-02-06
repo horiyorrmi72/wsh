@@ -13,7 +13,7 @@ import { SliderComponent } from './slider/slider.component';
 import { FadeOnScrollDirective } from 'src/app/directives/fadeOnScroll.directive';
 import { TShirtComponent } from './t-shirt/t-shirt.component';
 import { PreviousEventsComponent } from './previous-events/previous-events.component';
-
+import { LogoSliderComponent } from './logo-slider/logo-slider.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,8 @@ import { PreviousEventsComponent } from './previous-events/previous-events.compo
     SliderComponent,
     FadeOnScrollDirective,
     TShirtComponent,
-    PreviousEventsComponent
+    PreviousEventsComponent,
+    LogoSliderComponent
   ],
   imports: [
     BrowserModule,

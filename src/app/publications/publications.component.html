@@ -1,29 +1,35 @@
 <!-- Publications Section -->
-<section class="py-12 bg-gray-50">
-    <div class="container mx-auto px-6">
-        <div class="text-center">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6">Our Publications</h2>
-            <p class="text-gray-600 mb-8">
-                Discover our latest reports, research, and articles on topics that matter to us and the communities we
-                serve. Stay informed and engaged with our work.
-            </p>
+<main>
+    <!--Abuse Banner Section -->
+    <section class="relative h-[400px] bg-cover bg-center banner-con" style="background-image: url('assets/images/banner.jpg');">
+        <div class="absolute inset-0 bg-gray-900 bg-opacity-70"></div> <!-- Overlay for better text visibility -->
+        <div class="absolute inset-0 flex items-center justify-center flex-col p-6 md:px-40">
+            <h1 class="text-white text-4xl md:text-6xl font-bold">Our Publications</h1>
+            <p class="mt-2 text-lg text-white text-center">Discover our latest reports, research, and articles on topics that matter to us and the communities we
+                serve. Stay informed and engaged with our work.</p>
         </div>
+    </section>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Publication -->
-            <div *ngFor="let item of publications" class="bg-white shadow-md rounded-lg p-6">
-                <h3 class="text-xl font-semibold text-gray-800 mb-4">{{item.title}}</h3>
-                <p class="text-gray-600 mb-4">{{item.description}}</p>
-                <a href="{{item.url}}" class="text-blue-600 font-medium inline-block hover:underline">
-                    Download <span>{{item.section}}</span>
+    <section class="py-12 bg-gray-50">
+        
+        <div class="container mx-auto px-6">
+    
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Publication -->
+                <div *ngFor="let item of publications" class="bg-white shadow-md rounded-lg p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">{{item.title}}</h3>
+                    <p class="text-gray-600 mb-4">{{item.description}}</p>
+                    <a href="{{item.url}}" class="text-blue-600 font-medium inline-block hover:underline">
+                        Download <span>{{item.section}}</span>
+                    </a>
+                </div>
+            </div>
+    
+            <div class="mt-12 text-center">
+                <a href="/publications" class="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition">
+                    Explore All Publications
                 </a>
             </div>
         </div>
-
-        <div class="mt-12 text-center">
-            <a href="/publications" class="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition">
-                Explore All Publications
-            </a>
-        </div>
-    </div>
-</section>
+    </section>
+</main>
