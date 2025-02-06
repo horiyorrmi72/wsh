@@ -165,7 +165,7 @@
 </section>
 
 <!-- testimonials section  -->
- <section class="py-16 px-6">
+ <section class="py-16 md:px-6 px-2">
     <h2 class="text-center font-bold uppercase py-1 mb-3 md:my-5 md:text-3xl">
         testimonials/ stories
     </h2>
@@ -173,13 +173,13 @@
         <div class="w-2/12 sm:w-1/12 bg-slate-950 p-1 mb-10"></div>
     </div>
     
-    <div class="flex justify-center items-center p-4">
+    <div class="flex justify-center items-center md:p-4 p-2">
         <button (click)="prevTestimony()" class="w-[40px] h-[40px] mr-4 bg-gray-900 text-gray-700 rounded-full hover:bg-gray-400">
             <span class="text-white text-2xl">«</span>
         </button>
       
-        <div class="text-center shadow-md bg-gray-900 md:max-w-md py-6 px-4">
-          <div class="text-xl font-semibold text-white mb-2">
+        <div class="text-center shadow-md bg-gray-900 md:w-[450px] py-6 px-4 w-[300px]">
+          <div class="text-xl font-semibold text-white mb-2 capitalize">
             {{ testimonials[currentTestimonyIndex].name }}
           </div>
           <div class="text-lg italic text-white">
@@ -188,7 +188,7 @@
         </div>
       
         <button (click)="nextTestimony()" class="w-[40px] h-[40px] ml-4 bg-gray-900 text-gray-700 rounded-full hover:bg-gray-400">
-            <span class="text-white text-2xl">«</span>
+            <span class="text-white text-2xl">»</span>
         </button>
       </div>
       
