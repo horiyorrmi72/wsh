@@ -1,5 +1,5 @@
-<div class="bg-gray-50 text-gray-800">
-    <!-- Programs Header Section -->
+<!-- <div class="bg-gray-50 text-gray-800">
+    Programs Header Section
     <header class="bg-blue-500 text-white py-6 shadow-md">
         <div class="container mx-auto px-6">
             <h1 class="text-3xl font-bold">Our Programs</h1>
@@ -7,12 +7,12 @@
         </div>
     </header>
 
-    <!-- Programs Section placeholder-->
+    Programs Section placeholder
     <section class="py-12">
         <div class="container mx-auto px-6">
             <h2 class="text-2xl font-bold text-center mb-8">Explore Our Initiatives</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Program Card -->
+                Program Card
                 <div *ngFor="let item of programs" class="bg-white rounded-lg shadow-md overflow-hidden">
                     <img src="{{item.imagePath}}" alt="{{item.imageAlt}}" class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -26,7 +26,7 @@
         </div>
     </section>
 
-    <!-- Call to Action Section -->
+    Call to Action Section
     <section class="bg-blue-500 text-white py-12">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-2xl font-bold mb-4">Join Us in Making a Difference</h2>
@@ -36,4 +36,201 @@
                 Now</a>
         </div>
     </section>
+</div>
+
+ -->
+
+ <div class="text-gray-800">
+
+    <!--Programs Banner Section -->
+    <section class="relative h-[400px] bg-cover bg-center banner-con" style="background-image: url('assets/images/banner.jpg');">
+        <div class="absolute inset-0 bg-gray-900 bg-opacity-70"></div> <!-- Overlay for better text visibility -->
+        <div class="absolute inset-0 flex items-center justify-center flex-col">
+            <h1 class="text-white text-4xl md:text-6xl font-bold">Our Programs</h1>
+            <p class="mt-2 text-lg text-white">Empowering communities, one program at a time.</p>
+        </div>
+    </section>
+
+    <!-- Programs Section placeholder-->
+    <section class="py-12">
+        <h2 class="text-2xl font-bold text-center mb-8">Explore Our Initiatives</h2>
+        
+        <div class="container mx-auto px-4 pt-16 pb-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <!-- Image Column -->
+              <div class="flex justify-center">
+                <img src="./assets/images/program/Women Safe House Shelter.jpg" alt="abuse" class="w-full max-w-xs h-auto rounded-lg">
+              </div>
+          
+              <!-- Content Column -->
+              <div class="flex flex-col justify-center">
+                <h2 class="text-4xl font-semibold mb-4 text-gray-900 text-center capitalize">Shelter:</h2>
+                <p class="text-lg text-gray-500 mb-4 ">
+                    Women Safe House offers emergency and temporary shelter at an undisclosed location for women and girls fleeing gender-based violence. The emergency shelter provides a trauma-informed supportive environment focused on healing. Survivors can access care coordination, counseling, healthcare, and safety planning.
+                </p>
+              </div>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 pt-16 pb-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+              <!-- Content Column -->
+              <div class="flex flex-col justify-center">
+                <h2 class="text-4xl font-semibold mb-4 text-gray-900 text-center capitalize">Legal Services and Litigation:</h2>
+                <p class="text-lg text-gray-500 mb-4 ">
+                    Women Safe House offers emergency and temporary shelter at an undisclosed location for women and girls fleeing gender-based violence. The emergency shelter provides a trauma-informed supportive environment focused on healing. Survivors can access care coordination, counseling, healthcare, and safety planning.
+                </p>
+              </div>
+
+              <!-- Image Column -->
+              <div class="flex justify-center">
+                <img src="./assets/images/program/SISTERS1.jpg" alt="abuse" class="w-full max-w-xs h-auto rounded-lg">
+              </div>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 pt-16 pb-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <!-- Image Column -->
+              <div class="flex justify-center">
+                <img src="./assets/images/program/SISTERS.jpg" alt="abuse" class="w-full max-w-xs h-auto rounded-lg">
+              </div>
+          
+              <!-- Content Column -->
+              <div class="flex flex-col justify-center">
+                <h2 class="text-4xl font-semibold mb-4 text-gray-900 text-center capitalize">Psychosocial services:</h2>
+                <p class="text-lg text-gray-500 mb-4 ">
+                    We believe that psychosocial services which can be instrumental in helping a survivor overcome the trauma experienced in an abusive relationship or violence faced to move forward. Psychosocial services include counseling, support groups and storytelling events which available for survivors of all forms of gender-based violence, sexual assault, stalking, or domestic abuse, whether it occurred recently or in the past. Our programs include SISTERS CIRCLE (Support Group), SAFE SISTERS (teenage girls support group) and FEARLESS (storytelling and trauma recovery retreat). Sessions are offered to women and girls as individuals or as a group to deliver emotional and psychological support to help survivors heal.
+                </p>
+              </div>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 pt-16 pb-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+              <!-- Content Column -->
+              <div class="flex flex-col justify-center">
+                <h2 class="text-4xl font-semibold mb-4 text-gray-900 text-center capitalize">Training of Activists/Advocates on GBV:</h2>
+                <p class="text-lg text-gray-500 mb-4 ">
+                    Recognizing the importance of enhancing the skills, knowledge, and resources of activists to effectively advocate for gender equality and justice, empowering them to lead impactful campaigns, influence policies, and create sustainable change in their communities.
+                </p>
+              </div>
+
+              <!-- Image Column -->
+              <div class="flex justify-center">
+                <img src="./assets/images/program/Training of Activists.jpg" alt="abuse" class="w-full max-w-xs h-auto rounded-lg">
+              </div>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 pt-16 pb-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <!-- Image Column -->
+              <div class="flex justify-center">
+                <img src="./assets/images/program/24-Hour Emergency Helpline.png" alt="abuse" class="w-full max-w-xs h-auto rounded-lg">
+              </div>
+          
+              <!-- Content Column -->
+              <div class="flex flex-col justify-center">
+                <h2 class="text-4xl font-semibold mb-4 text-gray-900 text-center capitalize">24-Hour Emergency Helpline:</h2>
+                <p class="text-lg text-gray-500 mb-4 ">
+                    Providing 24/7 support and referrals for survivors in crisis, ensuring they have immediate access to emotional assistance, practical resources, and connections to essential services to address their needs and promote recovery.
+                </p>
+                <p class="text-lg text-gray-700 mb-4 font-bold">
+                    Click on the link below to find out more about our helpline.
+                </p>
+                <button class="block">
+                    <a href="https://findahelpline.com/organizations/women-safe-house-sustenance-initiative-24-hour-crisis-helpline" target="_blank" class="bg-gray-900 text-white py-3 px-8 rounded-lg shadow-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 capitalize ">helpline</a>
+                </button>
+              </div>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 pt-16 pb-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+              <!-- Content Column -->
+              <div class="flex flex-col justify-center">
+                <h2 class="text-4xl font-semibold mb-4 text-gray-900 text-center capitalize">SAFE Community Engagement:</h2>
+                <p class="text-lg text-gray-500 mb-4 ">
+                    Engaging in community education, awareness creation, and mobilization efforts aimed at preventing gender-based violence, addressing its root causes, and equipping individuals and groups with the knowledge and tools needed to respond effectively to incidents of violence.
+                </p>
+              </div>
+
+              <!-- Image Column -->
+              <div class="flex justify-center">
+                <img src="./assets/images/program/SAFE Community.jpg" alt="abuse" class="w-full max-w-xs h-auto rounded-lg">
+              </div>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 pt-16 pb-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <!-- Image Column -->
+              <div class="flex justify-center">
+                <img src="./assets/images/program/Employment.jpg" alt="abuse" class="w-full max-w-xs h-auto rounded-lg">
+              </div>
+          
+              <!-- Content Column -->
+              <div class="flex flex-col justify-center">
+                <h2 class="text-4xl font-semibold mb-4 text-gray-900 text-center capitalize">Employment Support for Survivors:</h2>
+                <p class="text-lg text-gray-500 mb-4 ">
+                    Supporting survivors by connecting them to job opportunities and providing skill development programs, empowering them to achieve financial independence and rebuild their lives with confidence and self-sufficiency.
+                </p>
+              </div>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 pt-16 pb-4">
+            <div class="flex flex-col justify-center">
+                <h2 class="text-4xl font-semibold mb-4 text-gray-900 text-center capitalize">Medical Services:</h2>
+                <p class="text-lg text-gray-500 mb-4 text-center">
+                    We ensure survivors have access to comprehensive medical care, which includes timely treatment for injuries or health conditions resulting from their experiences and appropriate referrals to specialized healthcare providers and services to address their physical and mental health needs.
+                </p>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 pt-16 pb-4">
+            <div class="flex flex-col justify-center">
+                <h2 class="text-4xl font-semibold mb-4 text-gray-900 text-center capitalize">Research and Documentation:</h2>
+                <p class="text-lg text-gray-500 mb-4 text-center">
+                    We carry out research and studies to gather data and insights that guide the development of effective interventions, while also systematically documenting cases of gender-based violence to understand better its patterns, causes, and impact on individuals and communities.
+                </p>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 pt-16 pb-4">
+            <div class="flex flex-col justify-center">
+                <h2 class="text-4xl font-semibold mb-4 text-gray-900 text-center capitalize">Policy Advocacy:</h2>
+                <p class="text-lg text-gray-500 mb-4 text-center">
+                    By advocating for and driving changes in policies and legislation to safeguard the rights of women and girls, ensuring their protection against discrimination, violence, and other forms of injustice.
+                </p>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 pt-16 pb-4">
+            <div class="flex flex-col justify-center">
+                <h2 class="text-4xl font-semibold mb-4 text-gray-900 text-center capitalize">Internship and Mentoring for Students/Graduates:</h2>
+                <p class="text-lg text-gray-500 mb-4 text-center">
+                    By providing resources, training, and mentorship to support career growth in advocacy and social work, empowering individuals with the skills and knowledge needed to drive meaningful change, influence policy, and effectively address social issues.
+                </p>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold mb-4">Join Us in Making a Difference</h2>
+            <p class="mb-6">Support our programs and help us bring positive change to the world.</p>
+            <a href="https://flutterwave.com/pay/womensafehousesurvivors"
+                class="bg-white text-gray-800 font-semibold py-2 px-6 rounded-full shadow-md hover:bg-gray-100">Donate
+                Now</a>
+        </div>
+    </section>
+
+    <app-logo-slider></app-logo-slider>
 </div>

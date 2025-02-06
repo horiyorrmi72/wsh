@@ -1,6 +1,6 @@
 <div class="h-screen overflow-hidden pb-10">
 <!-- Landing Section -->
-<section class="relative h-screen bg-cover bg-center -z-50" style="background-image: url('../../assets/images/support_front.jpg');">
+<section class="relative h-screen bg-cover bg-center -z-50" style="background-image: url('../../assets/images/banner.jpg');">
     <div class="absolute inset-0 bg-black opacity-50"></div>
     <div class="relative z-10 flex items-center justify-center h-lvh pt-64 text-center text-white px-6">
         <div>
@@ -10,7 +10,7 @@
             <p class="text-xl mb-8">
                 Join us in creating a safer world for everyone. Together, we can make a difference.
             </p>
-            <a href="#about" class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition">
+            <a href="#about" class="bg-gray-900 text-white px-8 py-3 rounded-lg hover:bg-gray-600 transition">
                 Learn More
             </a>
         </div>
@@ -24,7 +24,7 @@
 
 </div>
 <section fadeOnScroll [threshold]="0.6" [rootMargin]="'0px'" [animationClass]="'fade-in'"
-    class="w-full py-2 md:flex md:flex-col">
+    class="w-full py-12 md:flex md:flex-col">
     <div class="md:px-5 w-full md:flex md:flex-col">
         <h2 class="text-center font-bold uppercase py-1 mb-3 md:my-5 md:text-3xl">
             Who we are
@@ -34,38 +34,32 @@
         </div>
 
         <div
-            class="flex flex-col sm:flex sm:flex-row gap-10 sm:gap-5 sm:px-10 md:gap-5 md:px-10 w-full shadow shadow-gray-50">
+            class="flex flex-col sm:flex sm:flex-row gap-10 sm:gap-5 sm:px-10 md:gap-5 md:px-10 w-full ">
             <div class="right md:w-1/2">
                 <img src="../../assets/images/woman.png" alt="who we are section image"
                     class="bg-slate-600 rounded-xl" />
             </div>
             <div class="left w-full md:w-1/2 p-5 md:p-0 md:px-5 font-openSans">
-                <p>
-                    Women Safe House Sustenance Initiative is a non-profit
-                    organization dedicated to protecting and rehabilitating women and
-                    girls from all forms of Gender Based Violence in Nigeria. We
-                    provide shelter, legal aid, healthcare and comprehensive services
-                    to women and girls of all ages who are survivors of Rape,
-                    Domestic Violence, Female Genital Mutilation, Child Marriage and
-                    Sex Trafficking. Since 2016, we have created safe spaces for
-                    several women and girls to thrive.
+                <p class="text-gray-500">
+                    Women Safe House Sustenance Initiative is a feminist, women-led non-profit organization dedicated to protecting and rehabilitating women and girls from all forms of gender-based violence (GBV) in Nigeria. Since 2016, we have been committed to creating safe spaces where survivors can heal and thrive. Our comprehensive services include shelter, legal aid services, healthcare, and psychosocial support to victims/survivors of domestic-violence, sexual-violence, female genital mutilation (FGM), harmful traditional practices, child marriage, and sex trafficking. We stand as a beacon of hope, ensuring that women and girls of all ages have the resources and support they need to rebuild their lives.
                 </p>
+                <div class="container pt-8">
+                    <h3 class="capitalize font-bold text-gray-900 mb-3 text-center text-md">learn more about our mission</h3>
+                    <p class="text-center">
+                        <a href="/about" class="inline-block px-6 py-3 bg-gray-950 text-white font-bold rounded-md hover:bg-gray-600 transition-colors">About Us</a>
+                    </p>
+                </div>
             </div>
+            
         </div>
-    </div>
-    <div class="justify-center text-center mb-5 py-4">
-        <button class="bg-gray-600 uppercase py-4 px-5 mt-5 rounded-3xl">
-            Read More
-        </button>
     </div>
 </section>
 
-<!-- slider  section-->
-<app-slider fadeOnScroll [threshold]="0.6" [rootMargin]="'0px'" [animationClass]="'fade-in'"></app-slider>
-
+<!-- funders section  -->
+<app-logo-slider></app-logo-slider>
 
 <!-- what we do section placeholder-->
-<section class="w-full md:pb-0 bg-blue mb-5 mt-5" fadeOnScroll [threshold]="0.4" [rootMargin]="'0px'" [animationClass]="'fade-in'">
+<section class="w-full pb-20 pt-10 bg-blue" fadeOnScroll [threshold]="0.4" [rootMargin]="'0px'" [animationClass]="'fade-in'">
     <h2 class="text-center font-bold uppercase py-1 mb-3 md:my-5 md:text-3xl"> what we do</h2>
     <div class="flex justify-center items-center">
         <div class="w-2/12 sm:w-1/12 bg-slate-950 p-1 mb-10"></div>
@@ -141,10 +135,14 @@
     </div>
 </section>
 
+<!-- slider  section-->
+<section class="pb-16">
+    <app-slider fadeOnScroll [threshold]="0.6" [rootMargin]="'0px'" [animationClass]="'fade-in'"></app-slider>
+</section>
 
 <!-- impact section -->
 
-<section class="w-full py-5 md:flex md:flex-col bg-gray-300">
+<section class="w-full py-5 md:flex md:flex-col bg-gray-50">
     <div class="md:px-5 w-full md:flex md:flex-col ease-in duration-300">
         <h2 class="text-center font-bold uppercase py-1 mb-3 md:my-5 md:text-3xl">
             Impact of Our Works
@@ -160,7 +158,139 @@
                 class="left w-full md:w-full p-3 md:p-0 md:mb-10 font-openSans justify-center text-center md:px-20">
                 <h3 class="font font-semibold hover:animate-pulse">{{ impact.value }}</h3>
                 <span class="font-bold uppercase">{{ impact.title }}</span>
-                <p>{{ impact.description }}</p>
+                <p class="text-gray-500">{{ impact.description }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- testimonials section  -->
+ <section class="py-16 px-6">
+    <h2 class="text-center font-bold uppercase py-1 mb-3 md:my-5 md:text-3xl">
+        testimonials/ stories
+    </h2>
+    <div class="flex justify-center items-center">
+        <div class="w-2/12 sm:w-1/12 bg-slate-950 p-1 mb-10"></div>
+    </div>
+    
+    <div class="flex justify-center items-center p-4">
+        <button (click)="prevTestimony()" class="w-[40px] h-[40px] mr-4 bg-gray-900 text-gray-700 rounded-full hover:bg-gray-400">
+            <span class="text-white text-2xl">«</span>
+        </button>
+      
+        <div class="text-center shadow-md bg-gray-900 md:max-w-md py-6 px-4">
+          <div class="text-xl font-semibold text-white mb-2">
+            {{ testimonials[currentTestimonyIndex].name }}
+          </div>
+          <div class="text-lg italic text-white">
+            "{{ testimonials[currentTestimonyIndex].desc }}"
+          </div>
+        </div>
+      
+        <button (click)="nextTestimony()" class="w-[40px] h-[40px] ml-4 bg-gray-900 text-gray-700 rounded-full hover:bg-gray-400">
+            <span class="text-white text-2xl">«</span>
+        </button>
+      </div>
+      
+ </section>
+
+ <!-- program section  -->
+  <section class="py-16 px-6 bg-gray-50">
+    <h2 class="text-center font-bold uppercase py-1 mb-3 md:my-5 md:text-3xl">
+        programs
+    </h2>
+    <div class="flex justify-center items-center">
+        <div class="w-2/12 sm:w-1/12 bg-slate-950 p-1 mb-10"></div>
+    </div>
+    <p class="text-center text-gray-500 md:px-24">Women Safe House Sustenance Initiative offers free, nonjudgmental comprehensive crisis services to victims/survivors of gender-based violence. We serve women and girls from Nigeria. Participation in our programs is free and confidential.</p>
+
+    <div class="container mx-auto px-4 pt-16 pb-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Image Column -->
+          <div class="flex justify-center">
+            <img src="./assets/images/program/Women Safe House Shelter.jpg" alt="abuse" class="w-full max-w-[400px] h-auto rounded-sm">
+          </div>
+      
+          <!-- Content Column -->
+          <div class="flex flex-col justify-center">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900 text-center capitalize">shelter (safe house) services</h2>
+            <p class="text-lg text-gray-500 mb-4 ">
+                Women Safe House offers emergency and temporary shelter at an undisclosed location for women and girls fleeing gender-based violence. The emergency shelter provides a trauma-informed supportive environment focused on healing. Survivors can access care coordination, counseling, healthcare, and safety planning.
+            </p>
+          </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 pt-16 pb-4">
+        <div class="flex flex-col justify-center">
+            <h2 class="text-3xl font-semibold mb-4 text-gray-900 text-center capitalize">LEGAL SERVICES (LITIGATION) PROGRAM</h2>
+            <p class="text-lg text-gray-500 mb-4 text-center">
+                We understand that navigating through the legal system can be expensive, difficult and confusing. Women Safe House provides legal services to women and girls experiencing gender-based violence including domestic violence, sexual violence, stalking, human or sex trafficking in Nigeria.
+            </p>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 pt-16 pb-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Image Column -->
+          <div class="flex justify-center">
+            <img src="./assets/images/home/program1.jpg" alt="abuse" class="w-full max-w-[400px] h-auto rounded-sm">
+          </div>
+      
+          <!-- Content Column -->
+          <div class="flex flex-col justify-center">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900 text-center capitalize">COUNSELING PROGRAM</h2>
+            <p class="text-lg text-gray-500 mb-4 ">
+                We believe that counseling can be instrumental in helping a survivor overcome that trauma experienced in an abusive relationship or violence faced to move forward. Counseling is available for survivors of all forms of gender-based violence, sexual assault, stalking or domestic abuse, whether it occurred recently or in the past. Sessions are offered to women and girls as individuals or as a group.
+            </p>
+          </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 pt-16 pb-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Content Column -->
+          <div class="flex flex-col justify-center">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900 text-center capitalize">community and policy advocacy</h2>
+            <p class="text-lg text-gray-500 mb-4 ">
+                We believe that knowledge of the law is important and that together with an informed community we can eliminate gender-based violence against women and girls. We strive to engage, educate and inspire community leaders and members to join us in this belief. We offer a range of advocacy activities through free trainings, campaigns, presentations and workshops to shift the mindset of community stakeholders, spreading awareness about gender-based violence against women and girls.
+            </p>
+          </div>
+
+          <!-- Image Column -->
+          <div class="flex justify-center">
+            <img src="./assets/images/home/program2.jpg" alt="abuse" class="w-full max-w-[400px] h-auto rounded-sm">
+          </div>
+        </div>
+    </div>
+
+    <div class="container pt-8">
+        <h3 class="capitalize font-bold text-gray-900 mb-3 text-center text-lg">learn more about our programs</h3>
+        <p class="text-center">
+            <a href="/contact" class="inline-block px-6 py-3 bg-gray-950 text-white font-bold rounded-md hover:bg-gray-600 transition-colors">Contact Us</a>
+        </p>
+    </div>
+  </section>
+
+<!-- buy a t-shirt section  -->
+<section class="bg-white pt-[5rem] pb-[7rem]">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="lg:flex items-center justify-between space-x-12 space-y-16">
+
+            <div class="home__images">
+                <div class="home__orbe"></div>
+
+                <div class="home__img">
+                    <img src="assets/images/tee.jpg" alt="home image">
+                </div>
+            </div>
+            
+            <!-- Column 2: T-Shirt Info -->
+            <div class="lg:w-1/2">
+                <h2 class="text-3xl font-semibold text-gray-800 mb-4">Women Safe House Shirt</h2>
+                <h3 class="text-xl text-gray-600 mb-6">Get our t-shirt and be part of a Cause that matters</h3>
+                <p class="text-lg text-gray-700 mb-8">This comfortable and stylish shirt represents strength, unity, and support for women in need. Every purchase contributes to helping women in safe houses rebuild their lives and gain independence.</p>
+                <a href="/t-shirt" class="inline-block px-6 py-3 bg-gray-950 text-white font-bold rounded-md hover:bg-pink-700 transition-colors">Buy Now</a>
             </div>
         </div>
     </div>

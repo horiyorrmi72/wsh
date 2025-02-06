@@ -11,7 +11,10 @@ import { FooterComponent } from './footer/footer.component';
 import { LandingComponent } from './landing/landing.component';
 import { SliderComponent } from './slider/slider.component';
 import { FadeOnScrollDirective } from 'src/app/directives/fadeOnScroll.directive';
-
+import { TShirtComponent } from './t-shirt/t-shirt.component';
+import { PreviousEventsComponent } from './previous-events/previous-events.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -23,11 +26,15 @@ import { FadeOnScrollDirective } from 'src/app/directives/fadeOnScroll.directive
     FooterComponent,
     LandingComponent,
     SliderComponent,
-    FadeOnScrollDirective
+    FadeOnScrollDirective,
+    TShirtComponent,
+    PreviousEventsComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,21 +1,80 @@
 <!-- What is Abuse Section -->
-<section class="py-12 bg-gray-50">
-    <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">What is Abuse?</h2>
-        <p class="text-center text-gray-600 mb-12">
-            Abuse is any action that intentionally harms or injures another person. It can take many forms, and
-            understanding its types is the first step toward prevention.
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Type of Abuse Card -->
-            <div *ngFor="let item of abuseTypes" class="bg-white shadow-md rounded-lg p-6 abuse-card">
-                <h3 class="text-lg font-semibold text-gray-800">{{item.title}}</h3>
-                <p class="text-gray-600 mt-4">{{item.description}}</p>
-            </div>
+  <main>
+    <!--Abuse Banner Section -->
+    <section class="relative h-[400px] bg-cover bg-center banner-con" style="background-image: url('assets/images/banner.jpg');">
+        <div class="absolute inset-0 bg-gray-900 bg-opacity-70"></div> <!-- Overlay for better text visibility -->
+        <div class="absolute inset-0 flex items-center justify-center flex-col p-6 md:px-40">
+            <h1 class="text-white text-4xl md:text-6xl font-bold">Abuse?</h1>
+            <p class="mt-2 text-lg text-white text-center">Abuse is any action that intentionally harms or injures another person. It can take many forms, and understanding its types is the first step toward prevention.</p>
         </div>
-        <div class="mt-12 text-center">
-            <a href="/contact" class="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition">Get
-                Help</a>
+    </section>
+
+    <div class="container mx-auto px-4 pt-16 pb-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Image Column -->
+          <div class="flex justify-center">
+            <img src="./assets/images/abuse.png" alt="abuse" class="w-full max-w-xs h-auto rounded-lg">
+          </div>
+      
+          <!-- Content Column -->
+          <div class="flex flex-col justify-center">
+            <h2 class="text-4xl font-semibold mb-4 text-center">What is abuse? </h2>
+            <p class="text-lg text-gray-500 mb-4 ">
+                Abuse is any harmful act directed at an individual based on their biological
+                sex or gender identity. Abuse is commonly referred to as gender-based violence (GBV) and is rooted in gender inequality, the abuse of power and
+                harmful norms. Both males and females can be victims of abuse but the majority of victims are women and girls
+            </p>
+          </div>
         </div>
     </div>
-</section>
+
+    <section class="px-12">
+        <h2 class="text-gray-900 font-bold mb-4">Types of Abuse</h2>
+        <ul class="list-disc">
+            <li class="text-gray-500">Domestic violence.</li>
+            <li class="text-gray-500">Intimate partner violence.</li>
+            <li class="text-gray-500">Sexual violence</li>
+            <li class="text-gray-500">Harmful traditional practices</li>
+            <li class="text-gray-500">Psychological abuse</li>
+            <li class="text-gray-500">Sex trafficking</li>
+            <li class="text-gray-500">Economic violence</li>
+        </ul>
+    </section>
+
+    <section class="pt-5 pb-16 px-8">
+        <div class="mb-3">
+            <h3 class="text-gray-900 font-bold capitalize">Intimate partner violence (IPV):</h3>
+            <p class="text-gray-500">refers to behavior by an intimate partner or ex-partner that causes physical, sexual or psychological harm, including physical aggression, sexual coercion, psychological abuse and controlling behaviors.</p>
+        </div>
+        <div class="mb-3">
+            <h3 class="text-gray-900 font-bold capitalize">Domestic violence/abuse:</h3>
+            <p class="text-gray-500">can be physical, emotional, psychological, financial, or sexual which takes place within close relationship, usually by partners, ex-partners or family members. Domestic violence/abuse can involve a wide range of abusive and controlling behavior, including threats, harassment, financial control and emotional abuse.</p>
+        </div>
+        <div class="mb-3">
+            <h3 class="text-gray-900 font-bold capitalize">Psychological abuse:</h3>
+            <p class="text-gray-500">or emotional violence represents all the invisible forms of abuse that a person can experience in public or private life. It also refers to Coercive Control which sums up a range of controlling behaviors that an abuser exerts on a victim/survivor.</p>
+        </div>
+        <div class="mb-3">
+            <h3 class="text-gray-900 font-bold capitalize">Technology-facilitated abuse:</h3>
+            <p class="text-gray-500">refers to any form of controlling behavior from an abuser to a victim/survivor using technology. Technology ranges from social media to spyware and home-based technology</p>
+        </div>
+        <div class="mb-3">
+            <h3 class="text-gray-900 font-bold capitalize">Economic abuse:</h3>
+            <p class="text-gray-500">Economic violence includes taking away the earnings of the victim, not allowing them to have a separate income (giving them housewife status, or making them work in a family business without a salary), refusing them to work or earn an income, or making the victim unfit for work through targeted physical abuse.</p>
+        </div>
+        <div class="mb-3">
+            <h3 class="text-gray-900 font-bold capitalize">Physical abuse:</h3>
+            <p class="text-gray-500">is only one aspect of domestic abuse and an abuser’s behaviour can vary, from being very brutal and degrading to small actions that leave you humiliated. Those living with domestic abuse are often left feeling isolated and exhausted. Physical abuse involves: hitting, slapping, punching, throwing/smashing objects, shoving, kicking,
+                burning, choking, using weapons and other objects to cause injury.</p>
+        </div>
+        <div class="mb-3">
+            <h3 class="text-gray-900 font-bold capitalize">Sexual violence:</h3>
+            <p class="text-gray-500">Sexual violence refers to any act or attempt without consent to obtain sex, or unwanted sexual comments or acts to traffic a person for sexual purpose, that are directed against a person’s sexuality using coercion by anyone, regardless of their relationship to the victim, in any setting, including at home and at work. Sexual violence includes rape, child sexual abuse, sexual assault, forced prostitution, female genital mutilation, sexual harassment, sexual bullying and sexual abuse within partnerships.</p>
+        </div>
+
+        <div class="mt-6">
+            TO <a href="" class="text-gray-900 font-bold hover:text-gray-600">LEARN MORE</a>, JOIN OUR NEXT TRAINING FOR ACTIVISTS.
+        </div>
+    </section>
+      
+</main>

@@ -1,5 +1,5 @@
 <!-- About Us Section -->
-<section class="py-12 bg-white">
+<!-- <section class="py-12 bg-white">
     <div class="container mx-auto px-6">
         <div class="text-center">
             <h2 class="text-3xl font-bold text-gray-800 mb-6">About Us</h2>
@@ -10,7 +10,7 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Mission Card -->
+            Mission Card
             <div *ngFor="let item of pageContent" class="bg-blue-50 shadow-md rounded-lg p-6">
                 <h3 class="text-xl font-semibold text-gray-800 mb-4">{{item.title}}</h3>
                 <p class="text-gray-600">
@@ -25,4 +25,64 @@
             </a>
         </div>
     </div>
-</section>
+</section> -->
+
+
+<!-- What is Abuse Section -->
+<main>
+    <!--Abuse Banner Section -->
+    <section class="relative h-[400px] bg-cover bg-center banner-con" style="background-image: url('assets/images/banner.jpg');">
+        <div class="absolute inset-0 bg-gray-900 bg-opacity-70"></div> <!-- Overlay for better text visibility -->
+        <div class="absolute inset-0 flex items-center justify-center flex-col p-6 md:px-40">
+            <h1 class="text-white text-4xl md:text-6xl font-bold">About Us</h1>
+            <p class="mt-2 text-lg text-white text-center">We are dedicated to creating a world where everyone has the opportunity to thrive. Learn about our
+                mission, vision, and the values that drive our work.</p>
+        </div>
+    </section>
+
+    <!-- program section  -->
+  <section class="py-8 px-6 bg-gray-50">
+    
+    <div class="container mx-auto px-4 pt-8 pb-4" *ngFor="let item of pageContent">
+        <div class="flex flex-col justify-center">
+            <h2 class="text-center font-bold uppercase py-1 mb-3 md:my-5 md:text-3xl">
+                {{item.title}}
+            </h2>
+            <div class="flex justify-center items-center">
+                <div class="w-2/12 sm:w-1/12 bg-slate-950 p-1 mb-10"></div>
+            </div>        
+            
+            <p class="text-lg text-gray-500 mb-4 text-center">
+                {{item.data}}
+            </p>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 pt-8 pb-4" >
+        <div class="flex flex-col justify-center">
+            <h2 class="text-center font-bold uppercase py-1 mb-3 md:my-5 md:text-3xl">
+                THEMATIC AREAS-
+            </h2>
+            <div class="flex justify-center items-center">
+                <div class="w-2/12 sm:w-1/12 bg-slate-950 p-1 mb-10"></div>
+            </div>  
+            <ul class="list-disc">
+                <li class="text-gray-500">Shelter</li>
+                <li class="text-gray-500">Psychosocial support</li>
+                <li class="text-gray-500">Legal Services and Litigation</li>
+                <li class="text-gray-500">Community Engagements Dialogues and Advocacy</li>
+                <li class="text-gray-500">Partnerships and Collaborations</li>
+                <li class="text-gray-500">Research and Documentation</li>
+                <li class="text-gray-500">Internships and Mentoring for Students</li>
+                <li class="text-gray-500">Training of feminist-activists on gender-based violence </li>
+            </ul>
+        </div>
+    </div>
+
+  
+  </section>
+
+  <!-- funders section  -->
+<app-logo-slider></app-logo-slider>
+      
+</main>

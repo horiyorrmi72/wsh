@@ -8,65 +8,66 @@ import { Component } from '@angular/core';
 export class TeamsComponent {
   teams = [
     {
-      name: 'Dr.Otonye Bille',
-      imagePath: './assets/images/Dr_Otonye_Bille.jpg',
-      designation: '',
-      description: ''
+      name: 'Dr. Otonye Bille',
+      imagePath: './assets/images/teams/Dr_Otonye_Bille.jpg',
+      designation: 'Directors',
+      description: 'Board Chairperson'
     },
     {
-      name: '2500+',
-      imagePath: './assets/images/Rev_Niyi_Dahunsi.jpg',
-      designation: '',
-      description: ''
+      name: 'Rev. Niyi Dahunsi',
+      imagePath: './assets/images/teams/Rev_Niyi_Dahunsi.jpg',
+      designation: 'Directors',
+      description: 'Board Vice-Chairperson'
     },
     {
-      name: '2500+',
-      imagePath: '',
-      designation: '',
-      description: ''
+      name: 'Dr Omowumi Okedare',
+      imagePath: './assets/images/teams/Dr Omowumi Okedare.png',
+      designation: 'Directors',
+      description: 'Board member'
     },
     {
-      name: '2500+',
-      imagePath: '',
-      designation: '',
-      description: ''
+      name: 'Wuraoluwa Ayodele',
+      imagePath: './assets/images/teams/Wuraoluwa Ayodele.png',
+      designation: 'Directors',
+      description: 'Board member'
     },
     {
-      name: '2500+',
-      imagePath: '',
-      designation: '',
-      description: ''
+      name: 'Folake Ajayi Esq',
+      imagePath: './assets/images/teams/Folake Ajayi Esq.jpg',
+      designation: 'Directors',
+      description: 'Board member'
     },
     {
-      name: '2500+',
-      imagePath: '',
-      designation: '',
-      description: ''
+      name: 'Wuraoluwa Ayodele',
+      imagePath: './assets/images/teams/Wuraoluwa Ayodele.png',
+      designation: 'Staff',
+      description: 'Executive Director'
     },
     {
-      name: '2500+',
-      imagePath: '',
-      designation: '',
-      description: ''
+      name: 'Dr Omowumi Okedare',
+      imagePath: './assets/images/teams/Dr Omowumi Okedare.png',
+      designation: 'Staff',
+      description: 'Program Manager'
     },
     {
-      name: '2500+',
-      imagePath: '',
-      designation: '',
-      description: ''
+      name: 'Omobawumi Ebube Ayodele',
+      imagePath: './assets/images/teams/Omobawumi Ebube Ayodele.jpg',
+      designation: 'Staff',
+      description: 'Assistant Program Manager'
     },
     {
-      name: '2500+',
-      imagePath: '',
-      designation: '',
-      description: ''
+      name: 'Oluwaseun Akintola',
+      imagePath: './assets/images/teams/Oluwaseun Akintola.jpg',
+      designation: 'Staff',
+      description: 'Program Officer'
     },
     {
-      name: '2500+',
-      imagePath: '',
-      designation: '',
-      description: ''
+      name: 'Oluwayemisi Emmanuel',
+      imagePath: './assets/images/teams/Oluwayemisi Emmanuel.png',
+      designation: 'Staff',
+      description: 'Women’s Shelter Coordinator'
     },
   ]
-
+  directors = this.teams.filter(team => team.designation === 'Directors');
+  staff = this.teams.filter(team => team.designation === 'Staff');
 }
