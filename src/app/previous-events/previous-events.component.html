@@ -1,6 +1,6 @@
 <main> 
     <!-- Banner Section -->
-  <section class="relative h-[400px] bg-cover bg-center banner-con" style="background-image: url('assets/images/banner2.jpg');">
+  <section class="relative h-[400px] bg-cover bg-center banner-con" style="background-image: url('assets/images/banner.jpg');">
     <div class="absolute inset-0 bg-gray-900 bg-opacity-70"></div> <!-- Overlay for better text visibility -->
     <div class="absolute inset-0 flex items-center justify-center">
       <h1 class="text-white text-4xl md:text-6xl font-bold">Previous Events</h1>
@@ -18,86 +18,43 @@
 
   <!-- Event Cards Container -->
   <div class="container mx-auto pt-8 pb-6 py-24">
+
+    <!-- loading state  -->
+    <div *ngIf="isLoading" class="text-center text-gray-500 text-2xl">Loading events...</div>
+
+    <!-- error state -->
+    <div *ngIf="errorMessage" class="text-center text-red-500 text-xl mb-4">
+      {{ errorMessage }}
+    </div>
+
     <!-- Grid of Event Cards -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" *ngIf="events.length > 0; else noEventsTemplate">
 
       <!-- Event Card 1 -->
-      <div class="max-w-md rounded-lg shadow-lg bg-white overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
-        <img class="w-full h-72 object-cover" src="assets/images/event.jpg" alt="Event Image">
+      <div class="max-w-md rounded-lg shadow-lg bg-white overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl" *ngFor="let event of events">
+        <img class="w-full h-72 object-cover" [src]="event.image" alt="Event Image">
         <div class="p-6">
-          <h2 class="text-3xl font-semibold text-gray-900 mb-2">Event Title 1</h2>
-          <p class="text-gray-500 mb-4">This is a short description of event 1. It gives potential attendees an idea of what to expect.</p>
+          <h2 class="text-3xl font-semibold text-gray-900 mb-2">{{ event.title }}</h2>
+          <p class="text-gray-500 mb-4">{{ event.description }}</p>
           <div class="flex items-center space-x-4">
             <div class="flex items-center text-gray-900">
               <i class="fas fa-calendar-day mr-2"></i>
-              <span>Feb 20, 2025</span>
+              <span>{{ event.date }}</span>
             </div>
             <div class="flex items-center text-gray-900">
               <i class="fas fa-clock mr-2"></i>
-              <span>6:00 PM</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Event Card 2 -->
-      <div class="max-w-md rounded-lg shadow-lg bg-white overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
-        <img class="w-full h-72 object-cover" src="assets/images/event.jpg" alt="Event Image">
-        <div class="p-6">
-          <h2 class="text-3xl font-semibold text-gray-900 mb-2">Event Title 2</h2>
-          <p class="text-gray-500 mb-4">This is a short description of event 2. It gives potential attendees an idea of what to expect.</p>
-          <div class="flex items-center space-x-4">
-            <div class="flex items-center text-gray-900">
-              <i class="fas fa-calendar-day mr-2"></i>
-              <span>Feb 22, 2025</span>
-            </div>
-            <div class="flex items-center text-gray-900">
-              <i class="fas fa-clock mr-2"></i>
-              <span>7:00 PM</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Event Card 3 -->
-      <div class="max-w-md rounded-lg shadow-lg bg-white overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
-        <img class="w-full h-72 object-cover" src="assets/images/event.jpg" alt="Event Image">
-        <div class="p-6">
-          <h2 class="text-3xl font-semibold text-gray-900 mb-2">Event Title 3</h2>
-          <p class="text-gray-500 mb-4">This is a short description of event 3. It gives potential attendees an idea of what to expect.</p>
-          <div class="flex items-center space-x-4">
-            <div class="flex items-center text-gray-900">
-              <i class="fas fa-calendar-day mr-2"></i>
-              <span>Feb 25, 2025</span>
-            </div>
-            <div class="flex items-center text-gray-900">
-              <i class="fas fa-clock mr-2"></i>
-              <span>8:00 PM</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Event Card 4 -->
-      <div class="max-w-md rounded-lg shadow-lg bg-white overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
-        <img class="w-full h-72 object-cover" src="assets/images/event.jpg" alt="Event Image">
-        <div class="p-6">
-          <h2 class="text-3xl font-semibold text-gray-900 mb-2">Event Title 4</h2>
-          <p class="text-gray-500 mb-4">This is a short description of event 4. It gives potential attendees an idea of what to expect.</p>
-          <div class="flex items-center space-x-4">
-            <div class="flex items-center text-gray-900">
-              <i class="fas fa-calendar-day mr-2"></i>
-              <span>Mar 1, 2025</span>
-            </div>
-            <div class="flex items-center text-gray-900">
-              <i class="fas fa-clock mr-2"></i>
-              <span>9:00 AM</span>
+              <span>{{ event.time }}</span>
             </div>
           </div>
         </div>
       </div>
 
     </div>
+
+    <ng-template #noEventsTemplate>
+      <div class="text-center text-gray-900 text-2xl font-bold">No previous events available at this time.</div>
+    </ng-template>
+
   </div>
 
     <!-- Navigation Button to Previous Events -->

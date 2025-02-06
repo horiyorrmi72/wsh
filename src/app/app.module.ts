@@ -13,7 +13,8 @@ import { SliderComponent } from './slider/slider.component';
 import { FadeOnScrollDirective } from 'src/app/directives/fadeOnScroll.directive';
 import { TShirtComponent } from './t-shirt/t-shirt.component';
 import { PreviousEventsComponent } from './previous-events/previous-events.component';
-import { LogoSliderComponent } from './logo-slider/logo-slider.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -28,11 +29,12 @@ import { LogoSliderComponent } from './logo-slider/logo-slider.component';
     FadeOnScrollDirective,
     TShirtComponent,
     PreviousEventsComponent,
-    LogoSliderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

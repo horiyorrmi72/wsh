@@ -3,16 +3,16 @@ import { CommonModule } from '@angular/common';
 
 import { PartnersRoutingModule } from './partners-routing.module';
 import { PartnersComponent } from './partners.component';
-import { LogoSliderComponent } from '../logo-slider/logo-slider.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
     PartnersComponent,
-    LogoSliderComponent
   ],
   imports: [
     CommonModule,
-    PartnersRoutingModule
+    PartnersRoutingModule,
+    SharedModule
   ]
 })
 export class PartnersModule { }
