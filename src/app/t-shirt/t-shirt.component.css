@@ -170,3 +170,7 @@ p {
     transition: all 0.5s ease-out;
   }
   
+  .selected {
+    @apply bg-blue-900;
+    color: white; /* White text color */
+  }
