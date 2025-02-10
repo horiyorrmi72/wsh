@@ -3,7 +3,7 @@
       <div class="hero container grid grid-2-cols">
         <div class="hero-img-box">
           <div class="operation-content-box">
-            <img src="assets/images/tee.jpg" class="product-image" alt="shoes"
+            <img [src]="productImage" class="product-image" alt="shoes"
               width="400">
           </div>
         </div>
@@ -20,24 +20,36 @@
             <div class="price">$125.00</div>
           </div>
           <!-- Box for Size Selection -->
-            <div class="mb-7">
-                <div class="text-sm font-semibold text-gray-700 mb-4">Select Size</div>
-                
-                <div class="flex justify-around">
-                    <!-- Size Buttons -->
-                    <button class="text-sm px-4 py-2 border rounded-lg transition-colors">S</button>
-                    <button class="text-sm px-4 py-2 border rounded-lg transition-colors">M</button>
-                    <button class="text-sm px-4 py-2 border rounded-lg transition-colors">L</button>
-                    <button class="text-sm px-4 py-2 border rounded-lg transition-colors">XL</button>
-                </div>
+          <div class="mb-7">
+            <div class="text-sm font-semibold text-gray-700 mb-4">Select Size</div>
+            <div class="flex justify-around">
+              <!-- Size Buttons -->
+              <button class="text-sm px-4 py-2 border rounded-lg transition-colors hover:bg-gray-300">S</button>
+              <button class="text-sm px-4 py-2 border rounded-lg transition-colors hover:bg-gray-300">M</button>
+              <button class="text-sm px-4 py-2 border rounded-lg transition-colors hover:bg-gray-300">L</button>
+              <button class="text-sm px-4 py-2 border rounded-lg transition-colors hover:bg-gray-300">XL</button>
             </div>
+          </div>
+
+          <!-- Box for Size Selection -->
+          <div class="mb-7">
+            <div class="text-sm font-semibold text-gray-700 mb-4">Select Cloth Type</div>
+            <div class="flex justify-around">
+              <!-- Size Buttons -->
+              <button (click)="changeImage('endViolence')" [ngClass]="{'selected': selectedButton === 'endViolence'}" class="text-sm px-4 py-2 border rounded-lg transition-colors hover:bg-gray-300 capitalize">end violence</button>
+              <button (click)="changeImage('proudlyFeminist')" [ngClass]="{'selected': selectedButton === 'proudlyFeminist'}" class="text-sm px-4 py-2 border rounded-lg transition-colors hover:bg-gray-300 capitalize">Proudly feminist</button>
+              <button (click)="changeImage('noExcuses')" [ngClass]="{'selected': selectedButton === 'noExcuses'}" class="text-sm px-4 py-2 border rounded-lg transition-colors hover:bg-gray-300 capitalize">No excuses</button>
+              <button (click)="changeImage('hores')" [ngClass]="{'selected': selectedButton === 'hores'}" class="text-sm px-4 py-2 border rounded-lg transition-colors hover:bg-gray-300 capitalize">Hores</button>
+            </div>
+          </div>
+          
           <div class="btn-list grid">
             <div class="number-box">
-              <button id="decrease">
+              <button id="decrease" (click)="decreaseQuantity()">
                 <img src="assets/images/icon-minus.svg" alt="icon-minus">
               </button>
-              <span id="quanity">0</span>
-              <button id="increase">
+              <span id="quanity">{{ quantity }}</span>
+              <button id="increase" (click)="increaseQuantity()">
                 <img src="assets/images/icon-plus.svg" alt="icon-plus">
               </button>
             </div>
