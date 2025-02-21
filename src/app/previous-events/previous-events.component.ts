@@ -27,7 +27,6 @@ export class PreviousEventsComponent implements OnInit  {
     this.eventService.getCompletedEventData(page, limit).subscribe(
       (data) => {
         this.isLoading = false;
-        console.log(data);
         
         if (data?.data && data?.data?.length > 0) {
           this.events = data?.data;

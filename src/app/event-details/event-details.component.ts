@@ -30,7 +30,6 @@ export class EventDetailsComponent {
     this.isLoading = true;
     this.eventService.getEventDetails(eventId).subscribe(
       (data: any) => {
-        console.log(data);
         this.event = data.data;
         this.isLoading = false;
       },
