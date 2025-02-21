@@ -28,7 +28,6 @@ export class EventsComponent implements OnInit {
         this.isLoading = false;
         
         if (data?.data && data?.data?.length > 0) {
-          console.log(data);
           
           this.events = data?.data;
           this.currentPage = data.pagination.currentPage;
