@@ -19,7 +19,9 @@
   <div class="container mx-auto pt-8 pb-6 py-24">
 
     <!-- loading state  -->
-    <div *ngIf="isLoading" class="text-center text-gray-500 text-2xl">Loading events...</div>
+    <div *ngIf="isLoading" class="text-center text-gray-500 text-2xl">
+      <span class="loader"></span>
+    </div>
 
     <!-- error state -->
     <div *ngIf="errorMessage" class="text-center text-red-500 text-xl mb-4">
@@ -30,19 +32,19 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" *ngIf="events.length > 0; else noEventsTemplate">
 
       <!-- Event Card 1 -->
-      <div class="max-w-md rounded-lg shadow-lg bg-white overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl" *ngFor="let event of events">
-        <img class="w-full h-72 object-cover" [src]="event.image" alt="Event Image">
+      <div class="max-w-md rounded-lg shadow-lg bg-white overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer" *ngFor="let event of events" (click)="openEventDetails(event._id)">
+        <img class="w-full h-72 object-cover" [src]="event.imagePath" alt="Event Image">
         <div class="p-6">
           <h2 class="text-3xl font-semibold text-gray-900 mb-2">{{ event.title }}</h2>
           <p class="text-gray-500 mb-4">{{ event.description }}</p>
           <div class="flex items-center space-x-4">
             <div class="flex items-center text-gray-900">
               <i class="fas fa-calendar-day mr-2"></i>
-              <span>{{ event.date }}</span>
+              <span>{{ event.startDate | date:'yyyy-MM-dd' }}</span>
             </div>
             <div class="flex items-center text-gray-900">
               <i class="fas fa-clock mr-2"></i>
-              <span>{{ event.time }}</span>
+              <span>{{ event.startDate | date:'HH:mm' }}</span>
             </div>
           </div>
         </div>
@@ -51,17 +53,28 @@
 
     </div>
 
+    <!-- Pagination Controls -->
+    <div *ngIf="totalPages > 0" class="flex justify-center mt-10 items-center">
+      <button (click)="previousPage()" [disabled]="currentPage === 1" class="px-4 py-2 bg-gray-300 text-gray-800 rounded-md">
+        Previous
+      </button>
+      <span class="mx-4 text-lg">Page {{ currentPage }} of {{ totalPages }}</span>
+      <button (click)="nextPage()" [disabled]="currentPage === totalPages" class="px-4 py-2 bg-gray-300 text-gray-800 rounded-md">
+        Next
+      </button>
+    </div>
+
     <ng-template #noEventsTemplate>
       <div class="text-center text-gray-900 text-2xl font-bold">No upcoming events available at this time.</div>
     </ng-template>
   </div>
 
   <!-- Navigation Button to Previous Events -->
-    <div class="flex justify-start mt-8 mx-8 pt-5 pb-14 border-t-2 border-gray-50">
-        <a href="/previous-events" class="flex items-center text-gray-500 font-semibold hover:text-gray-900 transition duration-300">
-            <span class="mr-1">«</span>
-            <span class="mr-2">Previous Events</span>
-        </a>
-    </div>
+  <div class="flex justify-start mt-8 mx-8 pt-5 pb-14 border-t-2 border-gray-50">
+      <a href="/previous-events" class="flex items-center text-gray-500 font-semibold hover:text-gray-900 transition duration-300">
+          <span class="mr-1">«</span>
+          <span class="mr-2">Previous Events</span>
+      </a>
+  </div>
 
 </main>

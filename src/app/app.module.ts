@@ -15,6 +15,7 @@ import { TShirtComponent } from './t-shirt/t-shirt.component';
 import { PreviousEventsComponent } from './previous-events/previous-events.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
+import { EventDetailsComponent } from './event-details/event-details.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { SharedModule } from './shared/shared.module';
     FadeOnScrollDirective,
     TShirtComponent,
     PreviousEventsComponent,
+    EventDetailsComponent,
   ],
   imports: [
     BrowserModule,
