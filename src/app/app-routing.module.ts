@@ -4,6 +4,7 @@ import { EventsComponent } from './events/events.component';
 import { HomeComponent } from './home/home.component';
 import { TShirtComponent } from './t-shirt/t-shirt.component';
 import { PreviousEventsComponent } from './previous-events/previous-events.component';
+import { EventDetailsComponent } from './event-details/event-details.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, title: 'Home' },
@@ -20,6 +21,8 @@ const routes: Routes = [
   { path: 'support', loadChildren: () => import('./support/support.module').then(m => m.SupportModule) },
   { path: 't-shirt', component: TShirtComponent },
   { path: 'previous-events', component: PreviousEventsComponent },
+  { path: 'event/:id', component: EventDetailsComponent },
+
 ];
 
 @NgModule({

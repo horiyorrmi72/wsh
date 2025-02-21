@@ -11,12 +11,26 @@ export class EventService {
 
   constructor(private http: HttpClient) {}
 
-  getUpcomingEventData(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/events/upcoming-event`);
+  getUpcomingEventData(page: number, limit: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}/events/upcoming-event`, {
+      params: {
+        page: page.toString(),
+        limit: limit.toString()
+      }
+    });
   }
 
-  getCompletedEventData(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/events/upcoming`);
+  getCompletedEventData(page: number, limit: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}/events/completed-event`, {
+      params: {
+        page: page.toString(),
+        limit: limit.toString()
+      }
+    });
+  }
+
+  getEventDetails(eventId: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/events/eventby-id/${eventId}`); // Endpoint to get event details
   }
 
 }
