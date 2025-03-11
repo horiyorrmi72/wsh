@@ -18,7 +18,7 @@ export class AboutComponent {
     },
     {
       title: 'Our Values',
-      data: 'Compassion, integrity, collaboration, and innovation guide every step we take toward creating lasting impact.',
+      data: 'Equality, Inclusion, Social-justice, Respect for Diversity, Intersectionality, Compassion, Solidarity, Empowerment, Integrity, Collaboration, Self-care and Innovation guide every step we take toward creating lasting impact.',
     },
   ]
 }
