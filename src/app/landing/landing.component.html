@@ -1,14 +1,14 @@
 <div class="h-screen overflow-hidden pb-10">
 <!-- Landing Section -->
-<section class="relative h-screen bg-cover bg-center -z-50" style="background-image: url('../../assets/images/banner.jpg');">
+<section class="relative h-screen bg-cover bg-center -z-50" style="background-image: url('../../assets/images/home/gender_activists.jpg');">
     <div class="absolute inset-0 bg-black opacity-50"></div>
     <div class="relative z-10 flex items-center justify-center h-lvh pt-64 text-center text-white px-6">
         <div>
             <h1 class="text-5xl font-bold leading-tight mb-4">
-                Violence Ends Where Safety Begins
+            End violence Against Women and Girls
             </h1>
             <p class="text-xl mb-8">
-                Join us in creating a safer world for everyone. Together, we can make a difference.
+                Join us in creating safer communities for women and girls.
             </p>
             <a href="#about" class="bg-gray-900 text-white px-8 py-3 rounded-lg hover:bg-gray-600 transition">
                 Learn More
@@ -56,7 +56,7 @@
 </section>
 
 <!-- funders section  -->
-<app-logo-slider></app-logo-slider>
+<app-logo-slider header="OUR FUNDERS"></app-logo-slider>
 
 <!-- what we do section placeholder-->
 <section class="w-full pb-20 pt-10 bg-blue" fadeOnScroll [threshold]="0.4" [rootMargin]="'0px'" [animationClass]="'fade-in'">
@@ -65,69 +65,14 @@
         <div class="w-2/12 sm:w-1/12 bg-slate-950 p-1 mb-10"></div>
     </div>
     <div class="max-w-md mx-auto flex flex-col space-y-5 md:min-w-full flex-wrap">
-        <div class="md:grid md:grid-cols-3 md:px-5 md:space-y-5">
+        <div class="md:grid md:grid-cols-2 md:px-16 md:space-y-5">
             <!-- Card Item 1 -->
-            <div class="flex items-start space-x-4 my-4 md:mx-5">
-                <span class="text-2xl font-bold text-gray-900 hidden sm:block">01.</span>
+            <div *ngFor="let work of works" class="flex items-start space-x-4 my-4 md:mx-5">
+                <span class="text-2xl font-bold text-gray-900 hidden sm:block">{{work.id}}.</span>
                 <div class="flex flex-col">
-                    <h3 class="text-lg font-semibold text-gray-900">— We Find & Fund</h3>
+                    <h3 class="text-lg font-semibold text-gray-900">— {{work.header}}</h3>
                     <p class="text-gray-700 text-sm leading-relaxed">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod incididunt ut labore et
-                        dolore magna aliqua ut enim ad minim veniam, quis nostrud.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Card Item 2 -->
-            <div class="flex items-start space-x-4 my-4 md:mx-5">
-                <span class="text-2xl font-bold text-gray-900 hidden sm:block">02.</span>
-                <div class="flex flex-col">
-                    <h3 class="text-lg font-semibold text-gray-900">— We Find & Fund</h3>
-                    <p class="text-gray-700 text-sm leading-relaxed">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod incididunt ut labore et
-                        dolore magna aliqua ut enim ad minim veniam, quis nostrud.
-                    </p>
-                </div>
-            </div>
-            <!-- Card Item 3 -->
-            <div class="flex items-start space-x-4 my-4 md:mx-5">
-                <span class="text-2xl font-bold text-gray-900 hidden sm:block">03.</span>
-                <div class="flex flex-col">
-                    <h3 class="text-lg font-semibold text-gray-900">— We Find & Fund</h3>
-                    <p class="text-gray-700 text-sm leading-relaxed">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod incididunt ut labore et
-                        dolore magna aliqua ut enim ad minim veniam, quis nostrud.
-                    </p>
-                </div>
-            </div>
-            <!-- Card Item 4 -->
-            <div class="flex items-start space-x-4 my-4 md:mx-5">
-                <span class="text-2xl font-bold text-gray-900 hidden sm:block">04.</span>
-                <div class="flex flex-col">
-                    <h3 class="text-lg font-semibold text-gray-900">— We Find & Fund</h3>
-                    <p class="text-gray-700 text-sm leading-relaxed">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod incididunt ut labore et
-                        dolore magna aliqua ut enim ad minim veniam, quis nostrud.
-                    </p>
-                </div>
-            </div>
-            <div class="flex items-start space-x-4 my-4 md:mx-5">
-                <span class="text-2xl font-bold text-gray-900 hidden sm:block">05.</span>
-                <div class="flex flex-col">
-                    <h3 class="text-lg font-semibold text-gray-900">— We Find & Fund</h3>
-                    <p class="text-gray-700 text-sm leading-relaxed">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod incididunt ut labore et
-                        dolore magna aliqua ut enim ad minim veniam, quis nostrud.
-                    </p>
-                </div>
-            </div>
-            <div class="flex items-start space-x-4 my-4 md:mx-5">
-                <span class="text-2xl font-bold text-gray-900 hidden sm:block">06.</span>
-                <div class="flex flex-col">
-                    <h3 class="text-lg font-semibold text-gray-900">— We Find & Fund</h3>
-                    <p class="text-gray-700 text-sm leading-relaxed">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod incididunt ut labore et
-                        dolore magna aliqua ut enim ad minim veniam, quis nostrud.
+                        {{work.details}}
                     </p>
                 </div>
             </div>
@@ -145,7 +90,7 @@
 <section class="w-full py-5 md:flex md:flex-col bg-gray-50">
     <div class="md:px-5 w-full md:flex md:flex-col ease-in duration-300">
         <h2 class="text-center font-bold uppercase py-1 mb-3 md:my-5 md:text-3xl">
-            Impact of Our Works
+            Impact of Our Work
         </h2>
         <div class="flex justify-center items-center">
             <div class="w-2/12 sm:w-1/12 bg-slate-950 p-1 mb-10"></div>
@@ -267,7 +212,7 @@
     <div class="container pt-8">
         <h3 class="capitalize font-bold text-gray-900 mb-3 text-center text-lg">learn more about our programs</h3>
         <p class="text-center">
-            <a href="/contact" class="inline-block px-6 py-3 bg-gray-950 text-white font-bold rounded-md hover:bg-gray-600 transition-colors">Contact Us</a>
+            <a href="/programs" class="inline-block px-6 py-3 bg-gray-950 text-white font-bold rounded-md hover:bg-gray-600 transition-colors">Programs</a>
         </p>
     </div>
   </section>

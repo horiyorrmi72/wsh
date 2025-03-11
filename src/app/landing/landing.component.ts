@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-landing',
@@ -6,6 +6,31 @@ import { Component } from '@angular/core';
   styleUrls: ['./landing.component.css']
 })
 export class LandingComponent {
+  works = [
+    {
+      id:1,
+      header: `WE DEFEND WOMEN’S RIGHTS`,
+      details: `Defending women’s rights through legal representation is crucial to promoting justice. We provide free legal services to
+                        women and girls experiencing violence in local communities.`
+    },
+    {
+      id: 2,
+      header: `WE PROMOTE JUSTICE AND EQUITY`,
+      details: `Women and girls experiencing violence need to have justice and equity. We promote justice and equity by challenging patriarchal structures and systems in local communities through our programs to ensure that survivors of violence have trust in the justice system. 
+`
+    },
+    {
+      id:3,
+      header: `WE TRAIN AND EDUCATE`,
+      details: `Training and empowerment for feminist activists in local communities is essential to promoting women’s rights. We train feminist activists to promote safe spaces for women, addressing discrimination against women.`
+    },
+    {
+      id:4,
+      header: `WE PROTECT AND EMPOWER`,
+      details: `Women and girls who experience violence often need support to restart their lives. We provide a 24-hour women’s shelter that provides short-term housing for women and girls of all ages facing all forms of violence across Nigeria.`
+    },
+  ]
+
   impacts = [
     {
       value: '2500+',
@@ -53,11 +78,11 @@ export class LandingComponent {
     },
     {
       name: "survivor",
-      desc: "I will never have gotten justice for the abuse I experienced if Women Safe House had not provided a lawyer for me-survivor"
+      desc: "I will never have gotten justice for the abuse I experienced if Women Safe House had not provided a lawyer for me"
     },
     {
       name: "survivor",
-      desc: "The support group at Women Safe House has provided me a safe space to talk about my feelings, past experiences without judgment-survivor"
+      desc: "The support group at Women Safe House has provided me a safe space to talk about my feelings, past experiences without judgment"
     },
   ]
 
