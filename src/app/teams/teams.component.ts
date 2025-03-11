@@ -11,13 +11,13 @@ export class TeamsComponent {
       name: 'Dr. Otonye Bille',
       imagePath: './assets/images/teams/Dr_Otonye_Bille.jpg',
       designation: 'Directors',
-      description: 'Board Chairperson'
+      description: 'Board Member'
     },
     {
       name: 'Rev. Niyi Dahunsi',
       imagePath: './assets/images/teams/Rev_Niyi_Dahunsi.jpg',
       designation: 'Directors',
-      description: 'Board Vice-Chairperson'
+      description: 'Board Member'
     },
     {
       name: 'Dr Omowumi Okedare',
@@ -32,8 +32,14 @@ export class TeamsComponent {
       description: 'Board member'
     },
     {
-      name: 'Folake Ajayi Esq',
+      name: 'Chief Folake Ajayi Esq',
       imagePath: './assets/images/teams/Folake Ajayi Esq.jpg',
+      designation: 'Directors',
+      description: 'Board member'
+    },
+    {
+      name: 'Dr.Joseph Kosoko',
+      imagePath: './assets/images/teams/Dr_Joseph_Kosoko.jpg',
       designation: 'Directors',
       description: 'Board member'
     },
