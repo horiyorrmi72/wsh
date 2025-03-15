@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./t-shirt.component.css']
 })
 export class TShirtComponent {
+  price!: number;
+  productPrice: number = 8000;
   // Set the default product image
   productImage: string = 'assets/images/t-shirt/1.jpg';
   // This variable tracks the currently selected button
@@ -35,15 +37,20 @@ export class TShirtComponent {
     }
   }
 
+  calculateProductPrice():void{
+    this.price = this.productPrice * this.quantity;    
+  }
   // Method to increase quantity
   increaseQuantity(): void {
     this.quantity++;
+    this.calculateProductPrice()
   }
 
   // Method to decrease quantity
   decreaseQuantity(): void {
     if (this.quantity > 1) {
       this.quantity--;
+      this.calculateProductPrice();
     }
   }
 }
