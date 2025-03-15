@@ -13,32 +13,25 @@ import { SliderComponent } from './slider/slider.component';
 import { FadeOnScrollDirective } from 'src/app/directives/fadeOnScroll.directive';
 import { TShirtComponent } from './t-shirt/t-shirt.component';
 import { PreviousEventsComponent } from './previous-events/previous-events.component';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { EventDetailsComponent } from './event-details/event-details.component';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    HomeComponent,
-    MissionComponent,
-    // ContactComponent,
-    FooterComponent,
-    LandingComponent,
-    SliderComponent,
-    FadeOnScrollDirective,
-    TShirtComponent,
-    PreviousEventsComponent,
-    EventDetailsComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    SharedModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        HeaderComponent,
+        HomeComponent,
+        MissionComponent,
+        // ContactComponent,
+        FooterComponent,
+        LandingComponent,
+        SliderComponent,
+        FadeOnScrollDirective,
+        TShirtComponent,
+        PreviousEventsComponent,
+        EventDetailsComponent,
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        SharedModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
