@@ -20,7 +20,8 @@
           contributes
           to helping women in our safe-house to rebuild their lives and gain independence.</p>
         <div class="price-section mt-1">
-          <div class="price">#{{price || productPrice}}.00</div>
+          <div class="price"> {{ (price || productPrice) | currency:'NGN ':'symbol':'1.2-2' }} </div>
+
         </div>
         <!-- Box for Size Selection -->
         <div class="mb-7">
