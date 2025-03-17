@@ -59,12 +59,15 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "wsh_site:build"
+          },
           "configurations": {
             "production": {
-              "buildTarget": "wsh_site:build:production"
+              "browserTarget": "wsh_site:build:production"
             },
             "development": {
-              "buildTarget": "wsh_site:build:development"
+              "browserTarget": "wsh_site:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "wsh_site:build"
+            "browserTarget": "wsh_site:build"
           }
         },
         "test": {
