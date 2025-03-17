@@ -45,7 +45,7 @@ export class TShirtComponent {
         break;
     }
     // console.log(size);
-  }
+  };
   // This function will update the image based on the selected cloth type
   changeImage(clothType: string): void {
     this.selectedButton = clothType;
