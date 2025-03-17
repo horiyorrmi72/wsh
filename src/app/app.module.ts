@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,7 +18,8 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { SharedModule } from './shared/shared.module';
 import { EventDetailsComponent } from './event-details/event-details.component';
 
-@NgModule({ declarations: [
+@NgModule({
+    declarations: [
         AppComponent,
         HeaderComponent,
         HomeComponent,
@@ -30,8 +32,10 @@ import { EventDetailsComponent } from './event-details/event-details.component';
         TShirtComponent,
         PreviousEventsComponent,
         EventDetailsComponent,
+        
     ],
-    bootstrap: [AppComponent], imports: [BrowserModule,
-        AppRoutingModule,
-        SharedModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
+    bootstrap: [AppComponent], imports: [BrowserModule, 
+        AppRoutingModule,FormsModule,
+        SharedModule], providers: [provideHttpClient(withInterceptorsFromDi())]
+})
 export class AppModule { }
