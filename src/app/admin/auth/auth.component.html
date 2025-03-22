@@ -1,0 +1,22 @@
+<div class="max-h-full flex items-center justify-center">
+    <div class="form-container flex flex-col h-[400px] w-[600px] items-center justify-center">
+        <div class="form-header mb-10">
+            <h1 class="text-3xl font-medium">Login</h1>
+        </div>
+        <div class="form-body">
+            <form class="form" (ngSubmit)="login()">
+                <div class="flex flex-col mb-4">
+                    <label class="text-white-950" for="email">E-mail</label>
+                    <input type="text" [(ngModel)]="email" class="w-full h-10 rounded-lg px-4 py-2 my-2"
+                        placeholder="E-mail" name="email" required>
+                </div>
+                <div class="flex flex-col mb-4">
+                    <label class="text-white-950" for="password">Password</label>
+                    <input type="password" [(ngModel)]="password" class="w-full h-10 rounded-lg px-4 py-2 my-2"
+                        placeholder="Password" name="password" required>
+                </div>
+                <button type="submit" class="uppercase text-center bg-blue-700 w-full h-10 rounded-lg">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
