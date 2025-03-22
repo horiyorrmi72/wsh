@@ -16,4 +16,13 @@ export class AuthService {
     return this.http.post(`${this.baseUrl}/auth/login`, userData);
   }
 
+  isUserLoggedIn():boolean{
+    return localStorage.getItem('token') != null;
+  }
+
+
+  signOut(): void{
+    return localStorage.removeItem('token');
+  }
+
 }
