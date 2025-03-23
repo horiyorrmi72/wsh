@@ -9,29 +9,16 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
   private baseUrl: string = environment.apiBaseUrl;
-  constructor(private http:HttpClient, private router: Router) { }
 
-  
+  constructor(private http: HttpClient, private router: Router) { }
 
   signIn(userData: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/auth/login`, userData);
   }
 
 
-  logout(): void {
-    // Clear storage
+  signOut(): void {
     localStorage.removeItem('token');
-
-    // Navigate to the login page
     this.router.navigate(['/admin']);
-
-  isUserLoggedIn():boolean{
-    return localStorage.getItem('token') != null;
   }
-
-
-  signOut(): void{
-    return localStorage.removeItem('token');
-  }
-
 }
