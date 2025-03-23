@@ -1,0 +1,55 @@
+<!-- toolbar.component.html -->
+<div class="app-header bg-gray-900 text-white py-5 px-3" >
+    <mat-toolbar class="custom-toolbar bg-blue-950 text-white">
+
+        <button (click)="toggleSidebar()">
+            <i class="fa-solid fa-bars text-white"></i>
+        </button>
+
+        <div class="font-bold uppercase text-lg float-left sm:ml-5 ml-3">
+            <!-- <div class="flex"> -->
+                <a class="flex items-center " href="">
+                    <img class="w-[35px] mr-2" src="../../assets/images/wsh_logo.jpg" alt="">
+                    <span class="text-white text-xs sm:text-lg">Women Safe House</span>
+                </a>
+            <!-- </div> -->
+        </div>
+
+        <span class="example-spacer text-white"></span>
+
+      <button  class="neumorphic-button text-white bg-red-600 text-sm sm:text-base sm:px-4 px-3 py-2" (click)="onLogout()">Log out</button>
+      
+    </mat-toolbar>
+</div>
+
+
+<div class="container">
+    <div class="sidebar shadow-sm bg-gray-900" [ngClass]="{ 'showSidebar': isSidebarVisible, 'hideSidebar': !isSidebarVisible }" [@fadeInOut]>
+        <ul>
+            <li>
+                <a (click)="toggleDropdown('events')" routerLinkActive="active" class="px-3 py-3">
+                    <span class="menu-icon material-icons text-white">dashboard</span>
+                    <span class="menu-text text-white">Events</span>
+                    <span class="material-icons text-white">arrow_drop_down</span>
+                </a>
+                <ul *ngIf="dropdownVisible === 'events'" class="dropdown mt-2">
+                    <li><a routerLink="/dashboard/events" class="text-white text-sm sm:text-base px-3 py-2">Create Event</a></li>
+                    <li><a routerLink="/dashboard/upcoming-events" class="text-white text-sm sm:text-base px-3 py-2">Upcoming Event</a></li>
+                    <li><a routerLink="/dashboard/completed-events" class="text-white text-sm sm:text-base px-3 py-2">Completed Event</a></li>
+                </ul>
+            </li>
+            <li>
+                <a (click)="toggleDropdown('publications')" routerLinkActive="active" class="px-3 py-3">
+                    <span class="menu-icon material-icons text-white">grade</span>
+                    <span class="menu-text text-white">Publications</span>
+                    <span class="material-icons text-white">arrow_drop_down</span>
+                </a>
+                <ul *ngIf="dropdownVisible === 'publications'" class="dropdown mt-2">
+                    <li><a routerLink="/dashboard/publications" class="text-white text-sm sm:text-base px-3 py-2">Create Publication</a></li>
+                    <li><a routerLink="/dashboard/list-publications" class="text-white text-sm sm:text-base px-3 py-2">List Publication</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+  

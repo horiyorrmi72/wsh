@@ -37,10 +37,5 @@ export class AuthComponent {
 
   }
 
-  logOut(): void {
-    this.auth.signOut();
-    this.route.navigate(['/']);
-  }
-
 
 }

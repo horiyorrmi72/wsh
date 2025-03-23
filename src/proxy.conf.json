@@ -1,0 +1,7 @@
+{
+    "/api": {
+      "target": "https://wsh-admin.onrender.com",
+      "secure": true,
+      "changeOrigin": true
+    }
+  }

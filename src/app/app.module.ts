@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
+import { AdminHeaderComponent } from './admin/admin-header/admin-header.component';
 import { HomeComponent } from './home/home.component';
 import { MissionComponent } from './mission/mission.component';
 import { ContactComponent } from './contact/contact.component';
@@ -19,10 +20,18 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { SharedModule } from './shared/shared.module';
 import { EventDetailsComponent } from './event-details/event-details.component';
 
+// angular materials
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatMenuModule } from '@angular/material/menu';
+
 @NgModule({
     declarations: [
         AppComponent,
         HeaderComponent,
+        AdminHeaderComponent,
         HomeComponent,
         MissionComponent,
         // ContactComponent,
@@ -35,8 +44,17 @@ import { EventDetailsComponent } from './event-details/event-details.component';
         EventDetailsComponent,
         
     ],
-    bootstrap: [AppComponent], imports: [BrowserModule, 
-        AppRoutingModule,FormsModule,
-        SharedModule], providers: [provideHttpClient(withInterceptorsFromDi())]
+    bootstrap: [AppComponent], 
+    imports: [
+        BrowserModule, 
+        MatButtonModule,
+        MatToolbarModule,
+        MatIconModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatMenuModule,
+        FormsModule,
+        SharedModule], providers: [provideHttpClient(withInterceptorsFromDi())
+    ]
 })
 export class AppModule { }

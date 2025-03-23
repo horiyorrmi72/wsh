@@ -60,7 +60,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "wsh_site:build"
+            "browserTarget": "wsh_site:build",
+            "proxyConfig": "src/proxy.conf.json"
           },
           "configurations": {
             "production": {
