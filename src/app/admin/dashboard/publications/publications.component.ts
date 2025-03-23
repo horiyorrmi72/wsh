@@ -51,6 +51,8 @@ export class PublicationsComponent {
         formData.append(`authors[${index}]`, author); // appends authors[0], authors[1], etc.
       });
 
+      console.log(formData);
+      
       // Send data to the server
       this.publicationService.createPublication(formData).subscribe({
         next: () => {
