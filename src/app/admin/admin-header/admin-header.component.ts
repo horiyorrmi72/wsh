@@ -21,7 +21,7 @@ export class AdminHeaderComponent implements OnInit {
   isSidebarVisible = true;
   isSubmenuOpen = false;
   isDashboardSelected = false;
-
+  dropdownVisible: string | null = null;
 
   constructor(private sidebarService: SidebarService, private auth: AuthService,) {}
 
@@ -50,6 +50,14 @@ export class AdminHeaderComponent implements OnInit {
   // Method to handle logout
   onLogout(): void {
     this.auth.logout();
+  }
+
+  toggleDropdown(menu: string) {
+    if (this.dropdownVisible === menu) {
+      this.dropdownVisible = null;
+    } else {
+      this.dropdownVisible = menu;
+    }
   }
 
   

@@ -11,10 +11,10 @@
   }
   
   .mat-toolbar{
-    color: black !important;
+    color: #ffffff !important;
   }
   .mat-icon-button {
-    color: black !important;
+    color: #ffffff !important;
     background-color: black; /* Background color of the button */
     border-radius: 50%; /* Make the button round */
     width: 40px; /* Adjust the button width as needed */
@@ -53,7 +53,7 @@
   }
   
   .mat-mdc-icon-button{
-    color: black !important;
+    color: #ffffff !important;
   }  
 
   /* Your global styles.scss or a component-specific SCSS file */
@@ -119,11 +119,11 @@
 
 /* Common styles for menu items */
 .sidebar li a {
-    color: black;
+    color: #ffffff;
     text-decoration: none;
     display: flex;
     align-items: center;
-    padding: 10px;
+    /* padding: 10px; */
     border-radius: 10px;
     transition: all 0.3s;
   }
@@ -186,3 +186,5 @@
     opacity: 1;
     transition: transform 0.3s, opacity 0.3s;
   }
+
+  

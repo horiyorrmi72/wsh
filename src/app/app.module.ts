@@ -24,6 +24,8 @@ import { EventDetailsComponent } from './event-details/event-details.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
     declarations: [
@@ -49,6 +51,8 @@ import { MatIconModule } from '@angular/material/icon';
         MatToolbarModule,
         MatIconModule,
         AppRoutingModule,
+        BrowserAnimationsModule,
+        MatMenuModule,
         FormsModule,
         SharedModule], providers: [provideHttpClient(withInterceptorsFromDi())
     ]

@@ -23,27 +23,33 @@
 </div>
 
 
-<div class="container ">
+<div class="container">
     <div class="sidebar shadow-sm bg-gray-900" [ngClass]="{ 'showSidebar': isSidebarVisible, 'hideSidebar': !isSidebarVisible }" [@fadeInOut]>
         <ul>
             <li>
-                <a routerLink="/dashboard/events" routerLinkActive="active">
-                <span class="menu-icon material-icons text-white">dashboard</span>
-                <span class="menu-text text-white">Events</span>
+                <a (click)="toggleDropdown('events')" routerLinkActive="active" class="px-3 py-3">
+                    <span class="menu-icon material-icons text-white">dashboard</span>
+                    <span class="menu-text text-white">Events</span>
+                    <span class="material-icons text-white">arrow_drop_down</span>
                 </a>
+                <ul *ngIf="dropdownVisible === 'events'" class="dropdown mt-2">
+                    <li><a routerLink="/dashboard/events" class="text-white text-sm sm:text-base px-3 py-2">Create Event</a></li>
+                    <li><a routerLink="/dashboard/completed-events" class="text-white text-sm sm:text-base px-3 py-2">Upcoming Event</a></li>
+                    <li><a routerLink="/dashboard/upcoming-events" class="text-white text-sm sm:text-base px-3 py-2">Completed Event</a></li>
+                </ul>
             </li>
             <li>
-                <a routerLink="/dashboard/publications" routerLinkActive="active">
-                <span class="menu-icon material-icons text-white">grade</span>
-                <span class="menu-text text-white">Publications</span>
+                <a (click)="toggleDropdown('publications')" routerLinkActive="active" class="px-3 py-3">
+                    <span class="menu-icon material-icons text-white">grade</span>
+                    <span class="menu-text text-white">Publications</span>
+                    <span class="material-icons text-white">arrow_drop_down</span>
                 </a>
+                <ul *ngIf="dropdownVisible === 'publications'" class="dropdown mt-2">
+                    <li><a routerLink="/dashboard/publications" class="text-white text-sm sm:text-base px-3 py-2">Create Publication</a></li>
+                    <li><a routerLink="/dashboard/list-publications" class="text-white text-sm sm:text-base px-3 py-2">List Publication</a></li>
+                </ul>
             </li>
         </ul>
     </div>
 </div>
-  
-
-
-  
-  
   
