@@ -1,0 +1,58 @@
+<main class="w-full">
+
+    <!-- Navigation Button -->
+    <div class="flex justify-start mt-8 mx-8 pt-5 border-b-2 border-gray-50">
+        <a (click)="goBack()"
+            class="flex items-center text-gray-500 cursor-pointer font-semibold hover:text-gray-900 transition duration-300">
+            <span class="mr-1">«</span>
+            <span class="mr-2">Back</span>
+        </a>
+    </div>
+
+    <!-- Event Cards Container -->
+    <div class="container mx-auto pt-8 pb-6 py-24">
+        <!-- loading state  -->
+        <div *ngIf="isLoading" class="text-center text-gray-500 text-2xl">
+            <span class="loader"></span>
+        </div>
+
+        <!-- error state -->
+        <div *ngIf="errorMessage" class="text-center text-red-500 text-xl mb-4">
+            {{ errorMessage }}
+        </div>
+
+        <!-- Grid of Event Cards -->
+        <div class="grid w-full gap-6 " *ngIf="event">
+            <img class="w-full h-96 object-cover" [src]="event.imagePath" alt="Event Image">
+            <div class="p-6">
+                <h3 class="text-gray-500 capitalize mb-5">{{ event.state }} event</h3>
+                <h2 class="text-3xl font-semibold text-gray-900 mb-2">{{ event.title }}</h2>
+                <p class="text-gray-500 mb-4">{{ event.description }}</p>
+                <h3 class="font-bold">Start Time and Date</h3>
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center text-gray-900">
+                        <i class="fas fa-calendar-day mr-2"></i>
+                        <span>{{ event.startDate | date:'yyyy-MM-dd' }}</span>
+                    </div>
+                    <div class="flex items-center text-gray-900">
+                        <i class="fas fa-clock mr-2"></i>
+                        <span>{{ event.startDate | date:'HH:mm' }}</span>
+                    </div>
+                </div>
+
+                <h3 class="mt-5 font-bold">End Time and Date</h3>
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center text-gray-900">
+                        <i class="fas fa-calendar-day mr-2"></i>
+                        <span>{{ event.endDate | date:'yyyy-MM-dd' }}</span>
+                    </div>
+                    <div class="flex items-center text-gray-900">
+                        <i class="fas fa-clock mr-2"></i>
+                        <span>{{ event.endDate | date:'HH:mm' }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>

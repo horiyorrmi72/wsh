@@ -1,0 +1,49 @@
+<!-- toolbar.component.html -->
+<div class="app-header bg-gray-900 text-white py-5 px-3" >
+    <mat-toolbar class="custom-toolbar bg-blue-950 text-white">
+
+        <button (click)="toggleSidebar()">
+            <i class="fa-solid fa-bars text-white"></i>
+        </button>
+
+        <div class="font-bold uppercase text-lg float-left ml-5">
+            <!-- <div class="flex"> -->
+                <a class="flex items-center" href="">
+                    <img class="w-[35px] mr-2" src="../../assets/images/wsh_logo.jpg" alt="">
+                    <span class="text-white">Women Safe House</span>
+                </a>
+            <!-- </div> -->
+        </div>
+
+        <span class="example-spacer text-white"></span>
+      
+      <button routerLink="/profile" routerLinkActive="active" class="neumorphic-button text-white">Profile</button>
+      
+    </mat-toolbar>
+</div>
+
+
+<div class="container ">
+    <div class="sidebar shadow-sm bg-gray-900" [ngClass]="{ 'showSidebar': isSidebarVisible, 'hideSidebar': !isSidebarVisible }" [@fadeInOut]>
+        <ul>
+            <li>
+                <a routerLink="dashboard/events" routerLinkActive="active">
+                <span class="menu-icon material-icons text-white">dashboard</span>
+                <span class="menu-text text-white">Events</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="dashboard/publications" routerLinkActive="active">
+                <span class="menu-icon material-icons text-white">grade</span>
+                <span class="menu-text text-white">Publications</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+  
+
+
+  
+  
+  

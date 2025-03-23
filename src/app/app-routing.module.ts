@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EventsComponent } from './events/events.component';
 import { HomeComponent } from './home/home.component';
 import { TShirtComponent } from './t-shirt/t-shirt.component';
 import { PreviousEventsComponent } from './previous-events/previous-events.component';
 import { EventDetailsComponent } from './event-details/event-details.component';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent, title: 'Home' },
@@ -22,6 +22,14 @@ const routes: Routes = [
   { path: 't-shirt', component: TShirtComponent },
   { path: 'previous-events', component: PreviousEventsComponent },
   { path: 'event/:id', component: EventDetailsComponent },
+  { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
+  { path: 'auth', loadChildren: () => import('./admin/auth/auth.module').then(m => m.AuthModule) },
+  { path: 'dashboard', loadChildren: () => import('./admin/dashboard/dashboard.module').then(m => m.DashboardModule) },
+  { path: 'events', loadChildren: () => import('./admin/dashboard/events/events.module').then(m => m.EventsModule) },
+  { path: 'event', loadChildren: () => import('./admin/dashboard/event/event.module').then(m => m.EventModule) },
+  { path: 'publications', loadChildren: () => import('./admin/dashboard/publications/publications.module').then(m => m.PublicationsModule) },
+  
+  
 
 ];
 

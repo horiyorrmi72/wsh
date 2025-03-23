@@ -1,0 +1,146 @@
+<div class="main p-6 max-h-screen">
+    <div class="grid grid-cols-1 gap-6">
+        <!-- Form Section -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <form (submit)="createEvent(eventForm.value)" #eventForm="ngForm" class="space-y-4">
+                <div class="grid grid-cols-2 gap-4">
+                    <!-- Event Title -->
+                    <div>
+                        <label for="event-title" class="block text-sm font-medium text-gray-700">Event Title</label>
+                        <input type="text" id="event-title" name="title" ngModel placeholder="Enter event title"
+                            class="mt-1 p-2 w-full border rounded-md">
+                    </div>
+
+                    <!-- Start Time & Date -->
+                    <div>
+                        <label for="start-time" class="block text-sm font-medium text-gray-700">Start Time &
+                            Date</label>
+                        <input type="datetime-local" id="start-time" name="startDate" ngModel
+                            class="mt-1 p-2 w-full border rounded-md">
+                    </div>
+
+                    <!-- End Time & Date -->
+                    <div>
+                        <label for="end-time" class="block text-sm font-medium text-gray-700">End Time & Date</label>
+                        <input type="datetime-local" id="end-time" name="endDate" ngModel
+                            class="mt-1 p-2 w-full border rounded-md">
+                    </div>
+
+                    <!-- Event Image (File Upload) -->
+                    <div>
+                        <label for="imagePath" class="block text-sm font-medium text-gray-700">Event Image</label>
+                        <input type="file" id="imagePath" (change)="onFileSelected($event)"
+                            class="mt-1 p-2 w-full border rounded-md">
+                    </div>
+
+                    <!-- Description -->
+                    <div class="col-span-2">
+                        <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
+                        <textarea id="description" name="description" ngModel rows="4"
+                            class="mt-1 p-2 w-full border rounded-md"></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700 transition">
+                    Create Event
+                </button>
+            </form>
+        </div>
+
+        <!-- Events List -->
+        <hr class="border-gray-300 my-6">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h2 class="text-lg font-semibold">Upcoming Events</h2>
+            <div id="events-container" class="mt-4">
+                <div class="container mx-auto pt-8 pb-6 py-20">
+                    <!-- loading state  -->
+                    <div *ngIf="fetching" class="text-center text-gray-500 text-2xl">
+                        <span class="loader"></span>
+                    </div>
+
+                    <!-- error state -->
+                    <div *ngIf="errorMessage" class="text-center text-red-500 text-xl mb-4">
+                        {{ errorMessage }}
+                    </div>
+
+                    <!-- Grid of Event Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                        *ngIf="events.length > 0; else noEventsTemplate">
+
+                        <!-- event card -->
+                        <div class="w-full rounded-lg shadow-lg bg-white overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer"
+                            *ngFor="let event of events" (click)="openEventDetails(event._id)">
+                            <img class="w-full h-40 object-cover" [src]="event.imagePath" alt="Event Image">
+                            <div class="p-6">
+                                <h2 class="text-xl font-semibold text-gray-900 mb-2">{{ event.title }}</h2>
+                                <p class="text-gray-500 mb-4">{{ event.description }}</p>
+                                <div class="flex items-center space-x-4">
+                                    <div class="flex items-center text-gray-900">
+                                        <i class="fas fa-calendar-day mr-2"></i>
+                                        <span>{{ event.startDate | date:'yyyy-MM-dd' }}</span>
+                                    </div>
+                                    <div class="flex items-center text-gray-900">
+                                        <i class="fas fa-clock mr-2"></i>
+                                        <span>{{ event.startDate | date:'HH:mm' }}</span>
+                                    </div>
+                                    <div>
+                                        <i (click)="deleteEvent(event._id,$event)" class="fa-solid fa-trash"></i>
+                                    </div>
+                                    <div>
+                                        <i (click)="openEditModal(event, $event)"
+                                            class="fa-solid fa-pencil cursor-pointer"></i>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+            <ng-template #noEventsTemplate>
+                <div class="text-center text-gray-500 text-xl">
+                    No events found.
+                </div>
+            </ng-template>
+
+        </div>
+
+        <!-- Edit Modal -->
+        <!-- Edit Event Modal -->
+        <div *ngIf="selectedEvent" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+            <div class="bg-white p-6 rounded-lg shadow-lg w-1/2">
+                <h2 class="text-lg font-semibold mb-4">Edit Event</h2>
+
+                <label class="block text-sm font-medium text-gray-700">Title</label>
+                <input type="text" [(ngModel)]="selectedEvent.title" class="w-full border rounded p-2 mb-4" />
+
+                <label class="block text-sm font-medium text-gray-700">Description</label>
+                <textarea [(ngModel)]="selectedEvent.description" class="w-full border rounded p-2 mb-4"></textarea>
+
+                <label class="block text-sm font-medium text-gray-700">Start Date</label>
+                <input type="datetime-local" [(ngModel)]="selectedEvent.startDate"
+                    class="w-full border rounded p-2 mb-4" />
+
+                <label class="block text-sm font-medium text-gray-700">End Date</label>
+                <input type="datetime-local" [(ngModel)]="selectedEvent.endDate"
+                    class="w-full border rounded p-2 mb-4" />
+
+                <label class="block text-sm font-medium text-gray-700">Change Image</label>
+                <input type="file" (change)="onEditFileSelected($event)" class="w-full border rounded p-2 mb-4" />
+
+                <div class="flex justify-end space-x-4">
+                    <button (click)="editEvent()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                        Save
+                    </button>
+                    <button (click)="selectedEvent = null"
+                        class="bg-gray-400 text-white px-4 py-2 rounded hover:bg-gray-500">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
