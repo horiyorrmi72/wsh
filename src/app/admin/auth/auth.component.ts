@@ -23,7 +23,9 @@ export class AuthComponent {
         console.log('Login successful:', res);
         if (res.token) {
           localStorage.setItem('token', res.token);
-          this.route.navigate(['/dashboard']); 
+          console.log(res.token);
+          
+          this.route.navigate(['wsh/admin/dashboard']); 
         } else {
           console.error('Token not received, cannot redirect.');
         }
