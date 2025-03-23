@@ -13,14 +13,31 @@
     <section class="py-12 bg-gray-50">
         
         <div class="container mx-auto px-6">
+
+            <!-- loading state  -->
+            <!-- Full-Screen Spinner Overlay -->
+            <div *ngIf="fetching" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+                <div class="loader"></div> <!-- Spinner -->
+            </div>
     
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Publication -->
-                <div *ngFor="let item of publications" class="bg-white shadow-md rounded-lg p-6">
+                <div *ngFor="let item of publication" class="bg-white shadow-md rounded-lg p-6">
                     <h3 class="text-xl font-semibold text-gray-800 mb-4">{{item.title}}</h3>
-                    <p class="text-gray-600 mb-4">{{item.description}}</p>
-                    <a href="{{item.url}}" class="text-blue-600 font-medium inline-block hover:underline">
-                        Download <span>{{item.section}}</span>
+                    <p class="text-gray-600 mb-1 text-sm">{{item.description}}</p>
+                    <div class="flex items-center text-gray-900 mb-3">
+                        <i class="fas fa-calendar-day mr-2"></i>
+                        <span class="text-sm">{{ item.publicationDate | date:'yyyy-MM-dd' }}</span>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-sm">Authors</h3>
+
+                        <ul *ngFor="let author of item.authors" class="list-disc pl-6">
+                            <li class="text-gray-500 text-sm">{{ author }}</li>
+                        </ul>
+                    </div>
+                    <a href="{{item.publicationUrl}}" target="_blank" class="text-white bg-gray-900 w-full py-3 text-center mt-3 font-medium inline-block hover:underline">
+                        Download <span>{{item.category}}</span>
                     </a>
                 </div>
             </div>

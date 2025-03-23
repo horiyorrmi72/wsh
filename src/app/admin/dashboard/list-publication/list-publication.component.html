@@ -1,1 +1,105 @@
-<p>list-publication works!</p>
+<div class="main p-6 max-h-screen">
+    <div class="grid grid-cols-1 gap-6">
+       
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h2 class="text-lg font-semibold">List publication</h2>
+            <div id="events-container" class="mt-4">
+                <div class="container mx-auto pt-8 pb-6 py-20">
+                   <!-- loading state  -->
+                    <!-- Full-Screen Spinner Overlay -->
+                    <div *ngIf="fetching" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+                        <div class="loader"></div> <!-- Spinner -->
+                    </div>
+
+                    <!-- error state -->
+                    <div *ngIf="errorMessage" class="text-center text-red-500 text-xl mb-4">
+                        {{ errorMessage }}
+                    </div>
+
+                    <!-- Grid of Event Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                        *ngIf="publication.length > 0; else noEventsTemplate">
+
+                        <!-- event card -->
+                        <div class="w-full rounded-lg shadow-lg bg-white overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer"
+                            *ngFor="let data of publication" >
+                            <div class="p-6">
+                                <h2 class="text-xl font-semibold text-gray-900 mb-2">{{ data.title }}</h2>
+                                <p class="text-gray-500 mb-2">{{ data.description }}</p>
+                                <div class="flex items-center text-gray-900 mb-3">
+                                    <i class="fas fa-calendar-day mr-2"></i>
+                                    <span class="text-sm">{{ data.publicationDate | date:'yyyy-MM-dd' }}</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-sm">Authors</h3>
+            
+                                    <ul *ngFor="let author of data.authors" class="list-disc pl-6">
+                                        <li class="text-gray-500 text-sm">{{ author }}</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="flex items-center space-x-4 justify-between mt-3">
+                                    <a href={{data.publicationUrl}} target="_blank" class="bg-gray-900 py-2 px-4 text-white rounded" >
+                                        Download {{data.category}}
+                                    </a>
+                                    <div>
+                                        <i (click)="deletePublicationData(data._id, $event)" class="fa-solid fa-trash"></i>
+                                    </div>
+                                    <!-- <div>
+                                        <i (click)="openEditModal(data, $event)"
+                                            class="fa-solid fa-pencil cursor-pointer"></i>
+                                    </div> -->
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+            <ng-template #noEventsTemplate>
+                <div class="text-center text-gray-500 text-xl">
+                    No events found.
+                </div>
+            </ng-template>
+
+        </div>
+
+        <!-- Edit Modal -->
+        <!-- Edit Event Modal -->
+        <!-- <div *ngIf="selectedEvent" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+            <div class="bg-white p-6 rounded-lg shadow-lg w-1/2">
+                <h2 class="text-lg font-semibold mb-4">Edit Event</h2>
+
+                <label class="block text-sm font-medium text-gray-700">Title</label>
+                <input type="text" [(ngModel)]="selectedEvent.title" class="w-full border rounded p-2 mb-4" />
+
+                <label class="block text-sm font-medium text-gray-700">Description</label>
+                <textarea [(ngModel)]="selectedEvent.description" class="w-full border rounded p-2 mb-4"></textarea>
+
+                <label class="block text-sm font-medium text-gray-700">Start Date</label>
+                <input type="datetime-local" [(ngModel)]="selectedEvent.startDate"
+                    class="w-full border rounded p-2 mb-4" />
+
+                <label class="block text-sm font-medium text-gray-700">End Date</label>
+                <input type="datetime-local" [(ngModel)]="selectedEvent.endDate"
+                    class="w-full border rounded p-2 mb-4" />
+
+                <label class="block text-sm font-medium text-gray-700">Change Image</label>
+                <input type="file" (change)="onEditFileSelected($event)" class="w-full border rounded p-2 mb-4" />
+
+                <div class="flex justify-end space-x-4">
+                    <button (click)="editEvent()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                        Save
+                    </button>
+                    <button (click)="selectedEvent = null"
+                        class="bg-gray-400 text-white px-4 py-2 rounded hover:bg-gray-500">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</div>

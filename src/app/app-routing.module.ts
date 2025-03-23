@@ -30,6 +30,7 @@ const routes: Routes = [
   { path: 'publications', loadChildren: () => import('./admin/dashboard/publications/publications.module').then(m => m.PublicationsModule) },
   { path: 'completed-Event', loadChildren: () => import('./admin/dashboard/completed-events/completed-events.module').then(m => m.CompletedEventsModule) },
   { path: 'upcoming-Event', loadChildren: () => import('./admin/dashboard/upcoming-events/upcoming-events.module').then(m => m.UpcomingEventsModule) },
+  { path: 'list-publications', loadChildren: () => import('./admin/dashboard/list-publication/list-publications.module').then(m => m.ListPublicationsModule) },
 
 ];
 

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { PublicationService } from '../services/publication.service';
 
 @Component({
   selector: 'app-publications',
@@ -6,25 +8,34 @@ import { Component } from '@angular/core';
   styleUrls: ['./publications.component.css']
 })
 export class PublicationsComponent {
+  publication: any[] = [];
+  fetching: boolean = true;
+  errorMessage: string = '';
 
-  publications = [
-    {
-      title: 'Policy brief 2021',
-      description: `A comprehensive overview of our organization's achievements and impact over the past year.`,
-      url: '/publications/annual-report-2024.pdf',
-      section: 'Report'
-    },
-    {
-      title: 'Policy brief 2023',
-      description: `A deep dive into the strategies and methodologies we use to empower communities around the world.`,
-      url: '/publications/community-empowerment-research.pdf',
-      section: 'Research'
-    },
-    {
-      title: 'Annual Report 2024',
-      description: `Insights and recommendations for advocating for systemic social change within communities.`,
-      url: '/publications/advocacy-social-change.pdf',
-      section: 'Advocacy Guide'
-    }
-  ]
+  constructor(private Publication: PublicationService, private router: Router) { }
+
+  ngOnInit(): void {
+    this.getPublicationdata();
+  }
+
+  getPublicationdata(): void {
+    this.fetching = true;
+    this.Publication.getPublication().subscribe({
+      next: (res) => {
+        console.log(res);
+        
+        if (res?.publications && res?.publications?.length > 0) {
+          this.publication = res.publications;
+        } else {
+          this.errorMessage = 'No publication found';
+        }
+        this.fetching = false;
+      },
+      error: () => {
+        this.fetching = false;
+        this.errorMessage = 'An error occurred, try later.';
+      }
+    });
+  }
+
 }
