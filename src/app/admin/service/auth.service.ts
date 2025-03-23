@@ -17,12 +17,21 @@ export class AuthService {
     return this.http.post(`${this.baseUrl}/auth/login`, userData);
   }
 
+
   logout(): void {
     // Clear storage
-    localStorage.removeItem('token'); // Remove the token
+    localStorage.removeItem('token');
 
     // Navigate to the login page
     this.router.navigate(['/admin']);
+
+  isUserLoggedIn():boolean{
+    return localStorage.getItem('token') != null;
+  }
+
+
+  signOut(): void{
+    return localStorage.removeItem('token');
   }
 
 }

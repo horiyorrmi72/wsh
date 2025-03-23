@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { SidebarService } from 'src/app/services/sidebar.service';
+import { AuthService } from '../service/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,8 +11,12 @@ import { SidebarService } from 'src/app/services/sidebar.service';
 })
 export class DashboardComponent {
   isSidebarVisible = true;
-  constructor(private sidebarService: SidebarService) {}
-
+  constructor(private sidebarService: SidebarService,private auth: AuthService, private route: Router) { }
+  
+  logOut(): void {
+    this.auth.signOut();
+    this.route.navigate(['/']);
+  }
 
   ngOnInit() {
     this.sidebarService.sidebarVisibility$.subscribe((isVisible) => {
