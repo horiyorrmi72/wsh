@@ -13,7 +13,6 @@ export class DashboardComponent {
   
   logOut(): void {
     this.auth.signOut();
-    this.route.navigate(['/']);
   }
 
 }
