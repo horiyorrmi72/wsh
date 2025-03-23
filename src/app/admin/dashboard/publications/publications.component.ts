@@ -11,12 +11,12 @@ export class PublicationsComponent {
   publicationData: any = {
     title: '',
     description: '',
-    authors: [''], // Initialize with one empty author field
+    authors: [''],
     publicationDate: '',
     publicationUrl: '',
     category: ''
   };
-  isSubmitting: boolean = false; // Track form submission state
+  isSubmitting: boolean = false;
 
   constructor(private publicationService: PublicationService, private router: Router) { }
 
@@ -32,46 +32,45 @@ export class PublicationsComponent {
 
   // Handle form submission
   onSubmit(): void {
-    // Validate form
     if (this.isFormValid()) {
-      this.isSubmitting = true; // Show spinner
+      this.isSubmitting = true;
 
-      // Extract the date part in YYYY-MM-DD format
       const publicationDateFormatted = this.formatDate(this.publicationData.publicationDate);
 
-      const formData = new FormData();
-      formData.append('title', this.publicationData.title);
-      formData.append('description', this.publicationData.description);
-      formData.append('publicationDate', publicationDateFormatted);
-      formData.append('publicationUrl', this.publicationData.publicationUrl);
-      formData.append('category', this.publicationData.category);
       
-      // Append authors array correctly by iterating over it
-      this.publicationData.authors.forEach((author: string, index: number) => {
-        formData.append(`authors[${index}]`, author); // appends authors[0], authors[1], etc.
-      });
+      const payload = {
+        title: this.publicationData.title,
+        description: this.publicationData.description,
+        authors: this.publicationData.authors,
+        publicationDate: publicationDateFormatted,
+        publicationUrl: this.publicationData.publicationUrl,
+        category: this.publicationData.category
+      };
 
-      // Send data to the server
-      this.publicationService.createPublication(formData).subscribe({
-        next: () => {
+      // console.log('Sending payload:', payload); // 
+
+      this.publicationService.createPublication(payload).subscribe({
+        next: (response) => {
+          // console.log('Server response:', response);
           alert('Publication created successfully');
           this.resetForm();
-          this.isSubmitting = false; // Hide spinner
         },
-        error: () => {
+        error: (error) => {
+          console.error('Error:', error);
           alert('Failed to create publication.');
-          this.isSubmitting = false;
         }
+      }).add(() => {
+        this.isSubmitting = false;
       });
+
     } else {
       alert('Please fill all required fields.');
     }
   }
 
-   // Format datetime-local value to YYYY-MM-DD
-   formatDate(datetimeLocal: string): string {
-    // Extract the date part (YYYY-MM-DD) from the datetime-local value
-    return datetimeLocal.split('T')[0];
+  // Format datetime-local value to YYYY-MM-DD
+  formatDate(datetimeLocal: string): string {
+    return datetimeLocal.split('T')[0]; // Extracts YYYY-MM-DD from datetime input
   }
 
   // Reset the form
