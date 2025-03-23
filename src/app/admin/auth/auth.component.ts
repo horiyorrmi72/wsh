@@ -23,9 +23,10 @@ export class AuthComponent {
         console.log('Login successful:', res);
         if (res.token) {
           localStorage.setItem('token', res.token);
-          this.route.navigate(['/dashboard']); 
+          this.route.navigate(['/dashboard']);
         } else {
-          console.error('Token not received, cannot redirect.');
+          console.error('imvalid credentiials');
+          alert('Invalid credentials');
         }
       },
       error: (err) => {
