@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms'; 
 
 import { PublicationsRoutingModule } from './publications-routing.module';
 import { PublicationsComponent } from './publications.component';
@@ -11,7 +13,9 @@ import { PublicationsComponent } from './publications.component';
   ],
   imports: [
     CommonModule,
-    PublicationsRoutingModule
+    PublicationsRoutingModule,
+    FormsModule,
+    BrowserModule
   ]
 })
 export class PublicationsModule { }
