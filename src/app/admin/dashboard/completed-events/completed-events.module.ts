@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
-import { CompletedEventsRoutingModule } from './publications-routing.module';
+
+import { CompletedEventsRoutingModule } from './completed-events-routing.module';
 import { CompletedEventsComponent } from './completed-events.component';
 
 
@@ -11,6 +13,7 @@ import { CompletedEventsComponent } from './completed-events.component';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     CompletedEventsRoutingModule
   ]
 })

@@ -1,1 +1,59 @@
-<p>completed-events works!</p>
+<div class="main p-6 max-h-screen">
+    <div class="grid grid-cols-1 gap-6">
+
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h2 class="text-lg font-semibold">Completed Events</h2>
+            <div id="events-container" class="mt-4">
+                <div class="container mx-auto pt-8 pb-6 py-20">
+                    <!-- loading state  -->
+                    <div *ngIf="fetching" class="text-center text-gray-500 text-2xl">
+                        <span class="loader"></span>
+                    </div>
+
+                    <!-- error state -->
+                    <div *ngIf="errorMessage" class="text-center text-red-500 text-xl mb-4">
+                        {{ errorMessage }}
+                    </div>
+
+                    <!-- Grid of Event Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                        *ngIf="events.length > 0; else noEventsTemplate">
+
+                        <!-- event card -->
+                        <div class="w-full rounded-lg shadow-lg bg-white overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer"
+                            *ngFor="let event of events" (click)="openEventDetails(event._id)">
+                            <img class="w-full h-40 object-cover" [src]="event.imagePath" alt="Event Image">
+                            <div class="p-6">
+                                <h2 class="text-xl font-semibold text-gray-900 mb-2">{{ event.title }}</h2>
+                                <p class="text-gray-500 mb-4">{{ event.description }}</p>
+                                <div class="flex items-center space-x-4 justify-between">
+                                    <div class="flex items-center text-gray-900">
+                                        <i class="fas fa-calendar-day mr-2"></i>
+                                        <span>{{ event.startDate | date:'yyyy-MM-dd' }}</span>
+                                    </div>
+                                    <div class="flex items-center text-gray-900">
+                                        <i class="fas fa-clock mr-2"></i>
+                                        <span>{{ event.startDate | date:'HH:mm' }}</span>
+                                    </div>
+                                    <div>
+                                        <i (click)="deleteEvent(event._id,$event)" class="fa-solid fa-trash"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+            <ng-template #noEventsTemplate>
+                <div class="text-center text-gray-500 text-xl">
+                    No events found.
+                </div>
+            </ng-template>
+
+        </div>
+
+    </div>
+</div>

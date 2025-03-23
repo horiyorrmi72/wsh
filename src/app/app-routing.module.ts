@@ -28,6 +28,8 @@ const routes: Routes = [
   { path: 'events', loadChildren: () => import('./admin/dashboard/events/events.module').then(m => m.EventsModule) },
   { path: 'event', loadChildren: () => import('./admin/dashboard/event/event.module').then(m => m.EventModule) },
   { path: 'publications', loadChildren: () => import('./admin/dashboard/publications/publications.module').then(m => m.PublicationsModule) },
+  { path: 'completed-Event', loadChildren: () => import('./admin/dashboard/completed-events/completed-events.module').then(m => m.CompletedEventsModule) },
+  { path: 'upcoming-Event', loadChildren: () => import('./admin/dashboard/upcoming-events/upcoming-events.module').then(m => m.UpcomingEventsModule) },
 
 ];
 

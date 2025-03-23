@@ -14,8 +14,8 @@ const routes: Routes = [{
     { path: 'events', component: EventsComponent, canActivate: [AuthGuard] },
     { path: 'event/:id', component: EventComponent, canActivate: [AuthGuard] },
     { path: 'publications', component: PublicationsComponent, canActivate: [AuthGuard] },
-    { path: 'upcoming-events', component: CompletedEventsComponent, canActivate: [AuthGuard] },
-    { path: 'completed-events', component: UpcomingEventsComponent, canActivate: [AuthGuard] },
+    { path: 'completed-events', component: CompletedEventsComponent, canActivate: [AuthGuard] },
+    { path: 'upcoming-events', component: UpcomingEventsComponent, canActivate: [AuthGuard] },
     { path: 'list-publications', component: ListPublicationComponent, canActivate: [AuthGuard] },
     { path: '', redirectTo: 'events', pathMatch: 'full' } 
   ]
