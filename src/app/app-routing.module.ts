@@ -22,12 +22,12 @@ const routes: Routes = [
   { path: 't-shirt', component: TShirtComponent },
   { path: 'previous-events', component: PreviousEventsComponent },
   { path: 'event/:id', component: EventDetailsComponent },
-  { path: 'wsh/admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
-  { path: 'wsh/admin/auth', loadChildren: () => import('./admin/auth/auth.module').then(m => m.AuthModule) },
-  { path: 'wsh/admin/dashboard', loadChildren: () => import('./admin/dashboard/dashboard.module').then(m => m.DashboardModule) },
-  { path: 'wsh/admin/dashboard/events', loadChildren: () => import('./admin/dashboard/events/events.module').then(m => m.EventsModule) },
-  { path: 'wsh/admin/dashboard/event', loadChildren: () => import('./admin/dashboard/event/event.module').then(m => m.EventModule) },
-  { path: 'wsh/admin/dashboard/publications', loadChildren: () => import('./admin/dashboard/publications/publications.module').then(m => m.PublicationsModule) },
+  { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
+  { path: 'auth', loadChildren: () => import('./admin/auth/auth.module').then(m => m.AuthModule) },
+  { path: 'dashboard', loadChildren: () => import('./admin/dashboard/dashboard.module').then(m => m.DashboardModule) },
+  { path: 'events', loadChildren: () => import('./admin/dashboard/events/events.module').then(m => m.EventsModule) },
+  { path: 'event', loadChildren: () => import('./admin/dashboard/event/event.module').then(m => m.EventModule) },
+  { path: 'publications', loadChildren: () => import('./admin/dashboard/publications/publications.module').then(m => m.PublicationsModule) },
   
   
 

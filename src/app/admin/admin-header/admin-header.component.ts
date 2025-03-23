@@ -1,6 +1,8 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { SidebarService } from 'src/app/services/sidebar.service';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { AuthService } from '../service/auth.service';
+
 
 @Component({
   selector: 'app-admin-header',
@@ -21,7 +23,7 @@ export class AdminHeaderComponent implements OnInit {
   isDashboardSelected = false;
 
 
-  constructor(private sidebarService: SidebarService) {}
+  constructor(private sidebarService: SidebarService, private auth: AuthService,) {}
 
   ngOnInit() {
     this.sidebarService.sidebarVisibility$.subscribe((isVisible) => {
@@ -44,4 +46,11 @@ export class AdminHeaderComponent implements OnInit {
   selectDashboard() {
     this.isDashboardSelected = true;
   }
+
+  // Method to handle logout
+  onLogout(): void {
+    this.auth.logout();
+  }
+
+  
 }

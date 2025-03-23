@@ -171,12 +171,6 @@
     /* border-radius: 5%; */
   }
   
-  .sidebar li a.active:hover {
-    /* color: #ffffff; */
-    /* box-shadow: 4px 4px 6px #b9b9b9, -4px -4px 6px #ffffff; */
-    /* background-color: #d5d5d5; */
-  }
-  
   .sub-menu {
     padding-left: 20px; /* Adjust the value to your desired padding */
   }
