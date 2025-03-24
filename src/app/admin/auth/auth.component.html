@@ -1,4 +1,9 @@
 <div class="max-h-full flex items-center justify-center">
+    <!-- Full-Screen Spinner Overlay -->
+    <div *ngIf="fetching" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+        <div class="loader"></div> <!-- Spinner -->
+    </div>
+    
     <div class="form-container flex flex-col h-[400px] w-[600px] items-center justify-center">
         <div class="form-header mb-10">
             <h1 class="text-3xl font-medium">Login</h1>

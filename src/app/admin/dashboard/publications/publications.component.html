@@ -1,4 +1,4 @@
-<div class="main p-6 max-h-screen">
+<div class="md:p-6 p-2">
 
     <!-- Full-Screen Spinner Overlay -->
     <div *ngIf="isSubmitting" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
@@ -7,7 +7,7 @@
 
     <div class="grid grid-cols-1 gap-6">
         <!-- Form Section -->
-        <div class="bg-white p-6 rounded-lg shadow-lg">
+        <div class="bg-white md:p-6 p-3 rounded-lg shadow-lg">
             <form (ngSubmit)="onSubmit()" class="space-y-4">
                 <h1>Add a new Publication</h1>
                 <div class="grid grid-cols-1 gap-4">

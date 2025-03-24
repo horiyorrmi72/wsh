@@ -38,30 +38,35 @@ export class PublicationsComponent {
 
       // Extract the date part in YYYY-MM-DD format
       const publicationDateFormatted = this.formatDate(this.publicationData.publicationDate);
+      this.publicationData.publicationDate = publicationDateFormatted;
 
-      const formData = new FormData();
-      formData.append('title', this.publicationData.title);
-      formData.append('description', this.publicationData.description);
-      formData.append('publicationDate', publicationDateFormatted);
-      formData.append('publicationUrl', this.publicationData.publicationUrl);
-      formData.append('category', this.publicationData.category);
+      // const formData = new FormData();
+      // formData.append('title', this.publicationData.title);
+      // formData.append('description', this.publicationData.description);
+      // formData.append('publicationDate', publicationDateFormatted);
+      // formData.append('publicationUrl', this.publicationData.publicationUrl);
+      // formData.append('category', this.publicationData.category);
       
-      // Append authors array correctly by iterating over it
-      this.publicationData.authors.forEach((author: string, index: number) => {
-        formData.append(`authors[${index}]`, author); // appends authors[0], authors[1], etc.
-      });
+      // // Append authors array correctly by iterating over it
+      // this.publicationData.authors.forEach((author: string, index: number) => {
+      //   formData.append(`authors[${index}]`, author); // appends authors[0], authors[1], etc.
+      // });
 
-      console.log(formData);
+      // console.log(formData);
       
       // Send data to the server
-      this.publicationService.createPublication(formData).subscribe({
+      this.publicationService.createPublication(this.publicationData).subscribe({
         next: () => {
           alert('Publication created successfully');
           this.resetForm();
           this.isSubmitting = false; // Hide spinner
         },
-        error: () => {
-          alert('Failed to create publication.');
+        error: (err) => {
+          if(err.error){
+            alert(err.error.message)
+          }else{
+            alert("Network Error! Try again later")
+          }
           this.isSubmitting = false;
         }
       });

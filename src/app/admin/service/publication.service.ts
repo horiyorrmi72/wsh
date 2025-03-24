@@ -62,7 +62,8 @@ export class PublicationService {
     }
 
     const headers = new HttpHeaders({
-      Authorization: `Bearer ${token}`
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json' 
     });
 
     return this.http.post(`${this.baseUrl}/publications/add-report`, FormData, { headers }).pipe(
