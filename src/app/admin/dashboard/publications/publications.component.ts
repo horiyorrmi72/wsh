@@ -36,8 +36,9 @@ export class PublicationsComponent {
       this.isSubmitting = true;
 
       const publicationDateFormatted = this.formatDate(this.publicationData.publicationDate);
+      this.publicationData.publicationDate = publicationDateFormatted;
 
-      
+     
       const payload = {
         title: this.publicationData.title,
         description: this.publicationData.description,
@@ -55,9 +56,13 @@ export class PublicationsComponent {
           alert('Publication created successfully');
           this.resetForm();
         },
-        error: (error) => {
-          console.error('Error:', error);
-          alert('Failed to create publication.');
+        error: (err) => {
+          if(err.error){
+            alert(err.error.message)
+          }else{
+            alert("Network Error! Try again later")
+          }
+          this.isSubmitting = false;
         }
       }).add(() => {
         this.isSubmitting = false;

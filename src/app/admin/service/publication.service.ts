@@ -53,17 +53,13 @@ export class PublicationService {
       throw new Error('Unauthorized: No token found');
     }
 
-    let headers = new HttpHeaders({
-      Authorization: `Bearer ${token}`
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json' 
+
     });
 
-    if (isJson) {
-      headers = headers.set('Content-Type', 'application/json');
-    }
-
-    return headers;
-  }
-
+    
   // error handler
   private handleError(error: any, message: string): Observable<never> {
     console.error(`${message}:`, error);

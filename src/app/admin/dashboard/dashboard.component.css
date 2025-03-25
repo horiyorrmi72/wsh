@@ -35,7 +35,7 @@
     /* Adjust this value to match the width of your sidebar */
     right: 0;
     bottom: 0;
-  
+    
     overflow-y: auto;
     z-index: 999; /* Ensure the content is above the sidebar */
   }
