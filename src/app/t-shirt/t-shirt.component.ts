@@ -22,6 +22,9 @@ export class TShirtComponent {
   quantity: number = 1;
   selectedSize: string = '';
   email: string = '';
+  phone: string = '';
+  fullname: string = '';
+  address: string = '';
 
 
   selectSize(size: string): void {
