@@ -6,7 +6,7 @@ import { Component, AfterViewInit, Input } from '@angular/core';
   styleUrls: ['./logo-slider.component.css']
 })
 export class LogoSliderComponent implements AfterViewInit {
-  @Input() header!: string;
+  @Input() header: string ='OUR FUNDERS';
 
   ngAfterViewInit() {
     // Clone the logos after the component has rendered
