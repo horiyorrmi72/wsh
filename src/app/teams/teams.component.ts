@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class TeamsComponent {
   teams = [
     {
-      name: 'Dr. Otonye Bille',
+      name: 'Prof. Otonye Bille',
       imagePath: './assets/images/teams/Dr_Otonye_Bille.jpg',
       designation: 'Directors',
       description: 'Board Member'
@@ -20,13 +20,13 @@ export class TeamsComponent {
       description: 'Board Member'
     },
     {
-      name: 'Dr Omowumi Okedare',
+      name: 'Dr. Omowumi Okedare',
       imagePath: './assets/images/teams/Dr Omowumi Okedare.png',
       designation: 'Directors',
       description: 'Board member'
     },
     {
-      name: 'Wuraoluwa Ayodele',
+      name: 'Wuraoluwa Ayodele Esq',
       imagePath: './assets/images/teams/Wuraoluwa Ayodele.png',
       designation: 'Directors',
       description: 'Board member'
@@ -38,19 +38,19 @@ export class TeamsComponent {
       description: 'Board member'
     },
     {
-      name: 'Dr.Joseph Kosoko',
+      name: 'Dr. Joseph Kosoko',
       imagePath: './assets/images/teams/Dr_Joseph_Kosoko.jpg',
       designation: 'Directors',
       description: 'Board member'
     },
     {
-      name: 'Wuraoluwa Ayodele',
+      name: 'Wuraoluwa Ayodele Esq',
       imagePath: './assets/images/teams/Wuraoluwa Ayodele.png',
       designation: 'Staff',
       description: 'Executive Director'
     },
     {
-      name: 'Dr Omowumi Okedare',
+      name: 'Dr. Omowumi Okedare',
       imagePath: './assets/images/teams/Dr Omowumi Okedare.png',
       designation: 'Staff',
       description: 'Program Manager'
