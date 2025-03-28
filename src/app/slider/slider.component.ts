@@ -37,23 +37,23 @@ export class SliderComponent {
 
   ];
   currentIndex: number = 0;
-  private intervalId: any; // To store the interval ID for auto-scroll
+  private intervalId: any;
 
   constructor() { }
 
   ngOnInit(): void { 
-    this.startAutoScroll(); // Start auto-scroll when the component initializes
+    this.startAutoScroll();
   }
 
   ngOnDestroy(): void {
-    this.stopAutoScroll(); // Clean up the interval when the component is destroyed
+    this.stopAutoScroll();
   }
 
   // Start auto-scroll
   startAutoScroll(): void {
     this.intervalId = setInterval(() => {
       this.next();
-    }, 2000); // Change image every 3 seconds (adjust as needed)
+    }, 2000);
   }
 
   // Stop auto-scroll
