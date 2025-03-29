@@ -10,7 +10,7 @@ export class AboutComponent {
   pageContent = [
     {
       title: 'Our Mission',
-      data: 'To provide non-judgmental and nondiscriminatory protection and response to ALL women and girls experiencing gender-based violence in Nigeria.',
+      data: 'To provide non-judgmental and non-discriminatory protection and response to ALL women and girls experiencing gender-based violence in Nigeria.',
     },
     {
       title: 'Our Vision',
