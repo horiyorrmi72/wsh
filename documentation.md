@@ -66,6 +66,8 @@ SESSION_SECRET=your-session-secret
 ADMIN_EMAIL=admin@example.com
 ADMIN_PASSWORD=your-secure-password
 CLIENT_URL=https://yourfrontend.com
+ - find the rest within the env file in the zip
+ 
 ```
 
 ## **Publication section Admin Page**
