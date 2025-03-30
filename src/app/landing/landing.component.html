@@ -1,24 +1,28 @@
 <div class="h-screen overflow-hidden pb-10">
 <!-- Landing Section -->
-<section class="relative h-screen bg-cover bg-center" style="background-image: url('../../assets/images/home/gender_activists.webp');">
-    <div class="absolute inset-0 bg-black opacity-50"></div>
+<section class="relative h-screen bg-cover bg-center"
+    style="background-image: url('../../assets/images/home/gender_activists.webp');">
+    <!-- Background Overlay -->
+    <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
 
+    <!-- Content -->
     <div class="relative z-10 flex items-center justify-center h-lvh pt-64 text-center text-white px-6">
-        <div>
+        <div class="z-30">
             <h1 class="text-5xl font-bold leading-tight mb-4">
-            End violence Against Women and Girls
+                End Violence Against Women and Girls
             </h1>
             <p class="text-xl mb-8">
                 Join us in creating safer communities for women and girls.
             </p>
             <a routerLink="/about"
-                class="bg-gray-400 text-white px-8 py-3 rounded-lg hover:bg-gray-600 transition cursor-pointer">
+                class="bg-gray-400 text-white px-8 py-3 rounded-lg hover:bg-gray-600 transition cursor-pointer z-50 relative">
                 Learn More
             </a>
-            <!-- <button class="bg-blue-900 cursor-pointer">hi</button> -->
         </div>
     </div>
 </section>
+
+
 
 
 
