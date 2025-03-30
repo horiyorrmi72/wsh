@@ -112,12 +112,18 @@ export class TShirtComponent {
     const productQuantity = Number(this.quantity) || 1;
     const amount = price * productQuantity;
     const email = this.email;
+    const name = this.fullname;
+    const address = this.address;
+    const phone = this.phone;
 
     const payload = {
       productSize: this.selectedSize,
       productQuantity,
       amount,
-      email
+      email,
+      name,
+      address,
+      phone
     };
 
     // console.log("Client Payload:", payload);
