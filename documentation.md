@@ -88,3 +88,9 @@ CLIENT_URL=https://yourfrontend.com
 ## **Frontend Configuration**
 
 - **`environments/environment.ts`** (Required) - Update the Server base url (apiBaseUrl). e.g `'https://wsh-admin.onrender.com/api'`
+
+
+## **Flutterwave**
+_ you can enable this on the dashboard to receive webhook events and send customized purchase data to the site owner.
+- webhook uri = `baseUrl/api/payments/webhook
+- webhook hash secret = `FLUTTERWAVE_WEBHOOK_SECRET`
